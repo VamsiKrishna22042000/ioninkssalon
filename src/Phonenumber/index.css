@@ -1,0 +1,250 @@
+@media screen and (min-width: 992px) {
+  .modal-boxcon {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #4e4e4e90;
+  }
+
+  .modal-box-phone {
+    position: fixed;
+    height: 48.5vh;
+    width: 35vw;
+    top: 20%;
+    left: 30%;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4e4e4e;
+    font-size: 1vw;
+  }
+  .modal-box-phone1 {
+    position: fixed;
+    height: 30vh;
+    width: 25vw;
+    top: 30%;
+    left: 35%;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4e4e4e;
+    font-size: 1vw;
+  }
+
+  .phone-input {
+    margin-left: 34%;
+  }
+  .phone-input2 {
+    margin-left: 20%;
+  }
+
+  .form-control {
+    width: 60.5% !important;
+  }
+  .otp {
+    align-self: flex-start;
+    width: 60.5%;
+    margin-left: 17%;
+    margin-top: 5%;
+    height: 10%;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: #9c9c9c;
+    color: #fff;
+    font-size: 1vw;
+    padding: 3%;
+  }
+
+  .otp-2 {
+    align-self: flex-start;
+    width: 60.5%;
+    margin-left: 17%;
+    margin-top: 5%;
+    height: 10%;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: #ffcc33;
+    color: #fff;
+    font-size: 1vw;
+    padding: 3%;
+  }
+  .error-number {
+    display: inline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-size: 0.7rem;
+    color: red;
+    align-self: flex-start;
+    margin-left: 17%;
+    margin-top: 0px;
+    margin-bottom: -1%;
+  }
+  .error-disable {
+    display: none;
+  }
+  .signUp-phoneno {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: #4e4e4e;
+  }
+  .head-modal {
+    margin-left: 20%;
+    font-size: 1vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .phone-input3 {
+    margin-left: 20%;
+    height: 5vh;
+    width: 59%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .phone-input {
+    margin-left: 20%;
+  }
+  .phone-input2 {
+    margin-left: 8%;
+  }
+  .form-control {
+    height: 42px !important;
+    width: 80% !important;
+    font-size: 4vw !important;
+  }
+  .otp {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+    height: 10%;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: #9c9c9c;
+    color: #fff;
+    font-size: 4.5vw;
+    margin-top: 10%;
+    padding: 3%;
+  }
+
+  .otp-2 {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+    height: 10%;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: #ffcc33;
+    color: #fff;
+    font-size: 4.5vw;
+    margin-top: 10%;
+    padding: 3%;
+  }
+  .error-number {
+    display: inline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-size: 0.7rem;
+    color: red;
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-top: 0px;
+    margin-bottom: -1%;
+  }
+  .error-disable {
+    display: none;
+  }
+  .signUp-phoneno {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: #4e4e4e;
+  }
+
+  .modal-boxcon {
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #4e4e4e90;
+  }
+
+  .modal-box-phone {
+    position: fixed;
+    height: auto;
+    width: 87vw;
+    top: 20%;
+    left: 5%;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 8%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4e4e4e;
+    font-size: 3vw;
+  }
+
+  .modal-box-phone1 {
+    position: fixed;
+    height: auto;
+    width: 87vw;
+    top: 35%;
+    left: 5%;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 8%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4e4e4e;
+    font-size: 3vw;
+  }
+
+  .head-modal {
+    margin-left: 8%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-size: 4vw;
+  }
+  .phone-input3 {
+    margin-top: 2.3%;
+    margin-left: 8%;
+    padding-top: 2.9%;
+    padding: 2.9%;
+    width: 74%;
+  }
+}

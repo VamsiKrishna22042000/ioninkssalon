@@ -1,0 +1,868 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500&display=swap");
+
+@keyframes show-navbar {
+  0% {
+    transform: translateX(-500px);
+    z-index: 1;
+  }
+  100% {
+    transform: translateX(0);
+    z-index: 1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+/**Nav Bar Css*/
+
+.saloninks-home-con {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.saloninks-navbar-con {
+  height: 12%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  z-index: 3;
+  position: -webkit-sticky; /* For older WebKit-based browsers */
+  position: sticky;
+  background-color: #fff;
+}
+
+.saloninkslogo {
+  width: 15%;
+  z-index: 3;
+}
+
+.nav-bar-section {
+  height: auto;
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.nav-bar-section p {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #222222;
+}
+
+.nav-bar-section p:hover {
+  color: #3636d5;
+}
+
+.nav-bar-section select {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #222222;
+  outline: none;
+  border-color: transparent;
+}
+
+.nav-bar-section select:hover {
+  color: #3636d5;
+}
+
+.navbar-buttons {
+  height: auto;
+  width: 23%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar-buttons button:nth-child(1) {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background-image: linear-gradient(#5a5ad5, #3636d5);
+  border-width: 0.1rem;
+  padding: 3% 5% 3% 5%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border-color: #5a5ad5;
+}
+
+.navbar-buttons button:nth-child(1):hover {
+  color: #3636d5;
+  background-color: transparent;
+  background-image: none;
+  border-color: #222222;
+  border-width: 0.1rem;
+  border-color: #3636d5;
+}
+
+.navbar-buttons button:nth-child(2) {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem;
+  color: #222222;
+  background-color: #ffffff;
+  border-width: 0.1rem;
+  padding: 3% 5% 3% 5%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border-color: #222222;
+}
+
+.navbar-buttons button:nth-child(2):hover {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem;
+  color: #5856d6;
+  background-color: #ffffff;
+  border-width: 0.1rem;
+  padding: 3% 5% 3% 5%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border-color: #5a5ad5;
+}
+
+.ham-burger {
+  display: none;
+}
+
+.nav-bar-content {
+  display: none;
+}
+.nav-bar-blur-content {
+  display: none;
+}
+
+/**Min page*/
+.head-page-con {
+  position: relative;
+  height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-inks-main-image {
+  position: absolute;
+  height: 130%;
+  transform: rotate(-30deg);
+  border-radius: 1.1rem;
+  left: 60%;
+  z-index: -1;
+  filter: drop-shadow(-10px -5px 10px #6f9ec9);
+}
+
+.saloninks-head-page {
+  height: 100%;
+  width: 50%;
+  border-style: solid;
+  border-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2%;
+  margin-top: 3%;
+}
+
+.saloninks-head-page h1 {
+  font-family: "Instrument Sans", sans-serif;
+  max-width: 60%;
+  font-size: 4.5vw;
+  background-image: linear-gradient(
+    to bottom,
+    #7441e1,
+    #2d8992
+  ); /* Gradient colors */
+  -webkit-background-clip: text; /* Apply the gradient to the text */
+  background-clip: text; /* Apply the gradient to the text */
+  color: transparent; /* Make the text color transparent */
+}
+.saloninks-head-page p {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.8rem;
+  max-width: 60%;
+  line-height: 1.5;
+  color: #666c8b;
+  margin-top: 2%;
+}
+.salonink-head-page-button-con {
+  height: auto;
+  width: 60%;
+  margin-top: 3%;
+}
+
+.salonink-head-page-button-con button:nth-child(odd) {
+  background-image: linear-gradient(#5a5ad5, #3636d5);
+  color: #fff;
+  border-width: 0;
+  padding: 3% 5% 3% 5%;
+  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  border-color: #5a5ad5;
+}
+
+.salonink-head-page-button-con button:nth-child(odd):hover {
+  background-image: none;
+  color: #3636d5;
+  background-color: #fff;
+  border-color: #3636d5;
+  cursor: pointer;
+}
+
+.salonink-head-page-button-con button:nth-child(even) {
+  background-color: #fff;
+  color: #222222;
+  border-width: 0.1rem;
+  padding: 3% 5% 3% 5%;
+  border-radius: 0.5rem;
+  margin-left: 5%;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.salonink-head-page-button-con button:nth-child(even):hover {
+  background-image: none;
+  color: #3636d5;
+  background-color: #fff;
+  border-color: #3636d5;
+  cursor: pointer;
+}
+
+/**Main-page-brands*/
+
+@media screen and (max-width: 600px) {
+  .saloninks-home-con {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /**Nav Bar Css*/
+  .saloninks-navbar-con {
+    height: 5%;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .saloninkslogo {
+    width: 35%;
+    height: auto;
+  }
+
+  .nav-bar-section {
+    display: none;
+  }
+  .navbar-buttons {
+    display: none;
+  }
+
+  .ham-burger {
+    width: 8%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .bar {
+    padding: 3%;
+    margin: 10%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+  }
+  .bar1 {
+    padding: 3%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+    transform: rotate(45deg);
+  }
+  .bar2 {
+    transition: all 1s ease-in-out;
+    display: none;
+  }
+  .bar3 {
+    padding: 3%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+    transform: rotate(-45deg);
+  }
+
+  .nav-bar-content {
+    background-color: #5a5ad545;
+    position: absolute;
+    height: auto;
+    width: 83%;
+    top: 5%;
+    z-index: 3;
+    height: 40%;
+    animation: show-navbar 1s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 48%;
+    border-top-left-radius: 48%;
+    padding-left: 15%;
+    left: -15%;
+  }
+
+  .nav-bar-section1 {
+    padding-left: 5%;
+    height: 45%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 3;
+    font-size: 0.8rem;
+  }
+  .nav-bar-section1 p {
+    font-family: "Instrument Sans", sans-serif;
+    color: #222222;
+    z-index: 3;
+    font-size: 0.8rem;
+  }
+
+  .nav-bar-section1 select {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.8rem;
+    color: #222222;
+    outline: none;
+    border-color: transparent;
+    margin-left: -2%;
+    background-color: transparent;
+    z-index: 3;
+  }
+
+  .navbar-buttons2 {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 1;
+    margin-left: -15%;
+    z-index: 3;
+    font-size: 0.9rem;
+    padding-left: 8%;
+  }
+  .navbar-buttons2 button:nth-child(1) {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+    background-image: linear-gradient(#5a5ad5, #3636d5);
+    border-width: 0;
+    padding: 2% 3% 2% 3%;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .navbar-buttons2 button:nth-child(2) {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #5856d6;
+    border-width: 0;
+    padding: 2% 2% 2% 2%;
+    background-color: #fff;
+    border-width: 0.3vh;
+    border-color: #5856d6;
+    border-radius: 1vh;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .nav-bar-blur-content {
+    display: inline;
+    height: 100vh;
+    width: 85vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  }
+
+  /**Main-page*/
+
+  .home-inks-main-image {
+    position: absolute;
+    height: 100%;
+    transform: rotate(-25deg);
+    border-radius: 5vw;
+    left: 30%;
+    z-index: -1;
+    filter: drop-shadow(-10px -5px 10px #6f9ec9);
+    filter: blur(4px);
+    margin-top: -50%;
+  }
+
+  .saloninks-head-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+    margin-left: 0;
+    background-color: #ffffff40;
+  }
+
+  .saloninks-head-page h1 {
+    font-family: "Instrument Sans", sans-serif;
+    max-width: 95%;
+    font-size: 3.5rem;
+    background-image: linear-gradient(to right, #5856d6, #5856d6, #337e85);
+  }
+
+  .saloninks-head-page p {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.85rem;
+    max-width: 92%;
+    line-height: 1.5;
+    color: #222222;
+  }
+  .salonink-head-page-button-con {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+  .saloninks-home-con {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /**Nav Bar Css*/
+  .saloninks-navbar-con {
+    height: 5%;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .saloninkslogo {
+    width: 35%;
+    height: auto;
+  }
+
+  .nav-bar-section {
+    display: none;
+  }
+  .navbar-buttons {
+    display: none;
+  }
+
+  .ham-burger {
+    width: 6.5%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .bar {
+    padding: 3%;
+    margin: 10%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+  }
+  .bar1 {
+    padding: 3%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+    transform: rotate(45deg);
+  }
+  .bar2 {
+    transition: all 1s ease-in-out;
+    display: none;
+  }
+  .bar3 {
+    padding: 3%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+    transform: rotate(-45deg);
+  }
+
+  .nav-bar-content {
+    background-color: #5a5ad545;
+    position: absolute;
+    height: auto;
+    width: 75%;
+    top: 8%;
+    z-index: 3;
+    height: 45%;
+    animation: show-navbar 1s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 48%;
+    border-top-left-radius: 48%;
+    padding-left: 15%;
+    left: -15%;
+  }
+
+  .nav-bar-section1 {
+    padding-left: 5%;
+    height: 45%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 3;
+  }
+  .nav-bar-section1 p {
+    font-family: "Instrument Sans", sans-serif;
+    color: #222222;
+    z-index: 3;
+    font-size: 1.5rem;
+  }
+
+  .nav-bar-section1 select {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.5rem;
+    color: #222222;
+    outline: none;
+    border-color: transparent;
+    margin-left: -1%;
+    background-color: transparent;
+    z-index: 3;
+  }
+
+  .navbar-buttons2 {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 1;
+    margin-left: -15%;
+    z-index: 3;
+    padding-left: 5%;
+  }
+  .navbar-buttons2 button:nth-child(1) {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    background-image: linear-gradient(#5a5ad5, #3636d5);
+    border-width: 0;
+    padding: 2% 3% 2% 3%;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .navbar-buttons2 button:nth-child(2) {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.5rem;
+    color: #222222;
+    border-width: 0;
+    padding: 2% 2% 2% 2%;
+    background-color: #fff;
+    border-width: 0.3vh;
+    border-color: #e1e4e7;
+    border-radius: 1vh;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .nav-bar-blur-content {
+    display: inline;
+    height: 100vh;
+    width: 85vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  }
+
+  /**Main-page*/
+
+  .home-inks-main-image {
+    position: absolute;
+    height: 100%;
+    transform: rotate(-25deg);
+    border-radius: 5vw;
+    left: 30%;
+    z-index: -1;
+    filter: drop-shadow(-10px -5px 10px #6f9ec9);
+    filter: blur(4px);
+    margin-top: -30%;
+  }
+
+  .saloninks-head-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+    margin-left: 0;
+    background-color: #ffffff40;
+  }
+
+  .saloninks-head-page h1 {
+    font-family: "Instrument Sans", sans-serif;
+    max-width: 85%;
+    font-size: 6rem;
+    background-image: linear-gradient(to right, #5856d6, #5856d6, #337e85);
+  }
+
+  .saloninks-head-page p {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.5rem;
+    max-width: 92%;
+    line-height: 1.5;
+    color: #222222;
+  }
+  .salonink-head-page-button-con {
+    min-width: 80%;
+  }
+  .salonink-head-page-button-con button:nth-child(odd) {
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  .salonink-head-page-button-con button:nth-child(even) {
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .saloninks-home-con {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /**Nav Bar Css*/
+  .saloninks-navbar-con {
+    height: 15%;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .saloninkslogo {
+    width: 20%;
+    height: auto;
+  }
+
+  .nav-bar-section {
+    display: none;
+  }
+  .navbar-buttons {
+    display: none;
+  }
+
+  .ham-burger {
+    width: 5%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .bar {
+    padding: 3%;
+    margin: 10%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+  }
+  .bar1 {
+    padding: 3%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+    transform: rotate(45deg);
+  }
+  .bar2 {
+    transition: all 1s ease-in-out;
+    display: none;
+  }
+  .bar3 {
+    padding: 3%;
+    background: #222222;
+    transition: all 1s ease-in-out;
+    transform: rotate(-45deg);
+  }
+
+  .nav-bar-content {
+    background-color: #5a5ad545;
+    position: absolute;
+    height: auto;
+    width: 40%;
+    top: 5%;
+    z-index: 3;
+    height: 60%;
+    animation: show-navbar 1s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 48%;
+    border-top-left-radius: 48%;
+    padding-left: 10%;
+    left: -10%;
+    margin-top: 10%;
+  }
+
+  .nav-bar-section1 {
+    margin-top: 5%;
+    padding-left: 5%;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 3;
+    font-size: 0.8rem;
+  }
+  .nav-bar-section1 p {
+    font-family: "Instrument Sans", sans-serif;
+    color: #222222;
+    z-index: 3;
+    font-size: 0.7rem;
+  }
+
+  .nav-bar-section1 select {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.7rem;
+    color: #222222;
+    outline: none;
+    border-color: transparent;
+    margin-left: -2%;
+    background-color: transparent;
+    z-index: 3;
+  }
+
+  .navbar-buttons2 {
+    margin-bottom: 5%;
+    height: 15%;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 1;
+    margin-left: -15%;
+    z-index: 3;
+    font-size: 0.6rem;
+    padding-left: 8%;
+  }
+  .navbar-buttons2 button:nth-child(1) {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.7rem;
+    color: #fff;
+    background-image: linear-gradient(#5a5ad5, #3636d5);
+    border-width: 0;
+    padding: 2% 3% 2% 3%;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .navbar-buttons2 button:nth-child(2) {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.7rem;
+    color: #5856d6;
+    border-width: 0;
+    padding: 2% 2% 2% 2%;
+    background-color: #fff;
+    border-width: 0.3vh;
+    border-color: #5856d6;
+    border-radius: 1vh;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .nav-bar-blur-content {
+    display: inline;
+    height: 100vh;
+    width: 85vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    animation: show-navbar 1s ease-in-out forwards;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  }
+
+  /**Main-page*/
+
+  .home-inks-main-image {
+    position: absolute;
+    height: 100%;
+    transform: rotate(-25deg);
+    border-radius: 5vw;
+    left: 60%;
+    z-index: -1;
+    filter: drop-shadow(-10px -5px 10px #6f9ec9);
+    filter: blur(4px);
+    margin-top: 2%;
+  }
+
+  .saloninks-head-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+    margin-left: 0;
+    background-color: #ffffff40;
+  }
+
+  .saloninks-head-page h1 {
+    font-family: "Instrument Sans", sans-serif;
+    max-width: 75%;
+    font-size: 2.5rem;
+    background-image: linear-gradient(to right, #5856d6, #5856d6, #337e85);
+  }
+
+  .saloninks-head-page p {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.7rem;
+    max-width: 60%;
+    line-height: 1.5;
+    color: #222222;
+  }
+  .salonink-head-page-button-con {
+    width: 100%;
+  }
+
+  .salonink-head-page-button-con button:nth-child(even) {
+    font-size: 0.7rem;
+    padding: 1% 2%;
+  }
+  .salonink-head-page-button-con button:nth-child(odd) {
+    font-size: 0.7rem;
+    padding: 1% 2%;
+  }
+}

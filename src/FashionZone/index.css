@@ -1,0 +1,694 @@
+.loader-spinner {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-spinner {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+  .sukras-main-beauty {
+    height: auto;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    overflow: hidden;
+  }
+  .sukras-header-beauty {
+    height: 12%;
+    width: 100%;
+    padding: 0px;
+    padding-top: 1.5%;
+    padding-left: 2%;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+
+  .sukras-header-fashionzone {
+    height: 8vh;
+    width: 100%;
+    padding: 0px;
+    padding-top: 1.5%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+
+  .sukraslogobeauty {
+    height: 58px;
+    margin-left: 1%;
+    margin-bottom: 0.8%;
+  }
+
+  .search-cart {
+    height: auto;
+    width: 41%;
+    margin-right: 7.5%;
+    margin-bottom: 1.5%;
+    position: relative;
+  }
+  .serch-cart-container {
+    height: auto;
+    width: 25.9%;
+    position: absolute;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #4e4e4e;
+    right: 21.3%;
+    top: 11%;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .serch-cart-container1 {
+    height: auto;
+    width: 26.2%;
+    position: absolute;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #4e4e4e;
+    right: 19.8%;
+    top: 11%;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .each-service-each {
+    display: inline-block;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    text-decoration: none;
+    color: #000;
+    z-index: 5;
+  }
+
+  .serch-cart-input {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 4%;
+    width: 65%;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    outline: 1px;
+    outline-color: #9e9e9e;
+  }
+  .search-icon-button {
+    position: absolute;
+    height: 50%;
+    width: 4.5%;
+    top: 26.5%;
+    left: 56%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent;
+    border-width: 0px;
+  }
+  .search-icon {
+    position: absolute;
+    height: 85%;
+    width: 85%;
+    margin: 0px;
+  }
+  .cart-icon-buttonn {
+    position: absolute;
+    height: 85%;
+    width: 20%;
+    top: 12%;
+    left: 75%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent;
+    border-width: 0px;
+  }
+  .cart-icon {
+    position: absolute;
+    height: 85%;
+    width: 85%;
+    margin: 0px;
+  }
+  .count-of-cart {
+    display: inline-flex;
+    position: absolute;
+    color: #4e4e4e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    left: 80.5%;
+    top: 35%;
+    background-color: #fff;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    z-index: 1;
+    border-color: #f4bd18;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+  }
+  .beautyzone-body {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 0%;
+    margin-top: -2%;
+  }
+  .left-arrow-mobile {
+    display: none;
+    color: #4e4e4e;
+    font-size: 8vw;
+  }
+  .arrow-btn {
+    display: none;
+  }
+  .location-btnn {
+    display: none;
+  }
+
+  .search-btn-fashion {
+    display: none;
+  }
+
+  .notification-btnn {
+    display: none;
+  }
+  .dropdown-container {
+    display: none;
+  }
+
+  .profile-block2 {
+    border-style: solid;
+    height: auto;
+    width: 6vw;
+    position: absolute;
+    right: 3%;
+    bottom: -90%;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3e3e3e;
+    padding-left: 1%;
+    border-width: 0px;
+    cursor: pointer;
+    z-index: 3;
+    outline: none;
+    text-decoration: none;
+  }
+  .profile-block2 :hover {
+    color: #f4bd18;
+  }
+
+  .beautyzone-body-2 {
+    height: auto;
+    width: 100%;
+    margin-top: 2%;
+    flex-wrap: wrap;
+  }
+
+  .our-services {
+    background-color: #fffaed;
+    width: 95vw;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: #3e3e3e;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    flex-wrap: wrap;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .our-services-head {
+    position: absolute;
+    top: 0px;
+    left: 45%;
+    cursor: pointer;
+  }
+  .our-services-btn {
+    border-color: transparent;
+    background-color: transparent;
+    margin-top: 15%;
+    margin-right: 2vw;
+    margin-left: 2%;
+    width: 18vw;
+    border-style: solid;
+    cursor: pointer;
+  }
+  .our-services-img {
+    height: 22vh;
+    width: 12vw;
+    border-radius: 100%;
+    border-style: solid;
+    border-color: #f4bd18;
+    border-width: 5px;
+    cursor: pointer;
+  }
+  .our-services-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: #4e4e4e;
+    font-weight: Bold;
+    cursor: pointer;
+  }
+  .cosmatic-videoItem {
+    height: 40vh;
+    width: 550px;
+    margin-left: 1%;
+    margin-right: 1%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  .cosmatic-products-con {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+    margin-bottom: 5%;
+  }
+  .beauty-cosmetic-products3 {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+  .log-btn {
+    width: 90%;
+    text-align: start;
+    background-color: transparent;
+    border-width: 0px;
+    font-size: 1.2vw;
+    margin-left: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sukras-main-beauty {
+    height: auto;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    overflow: hidden;
+  }
+  .sukras-header-beauty {
+    height: 6vh;
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+
+  .sukras-header-fashionzone {
+    height: 6vh;
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 5;
+  }
+
+  .sukraslogobeauty {
+    display: none;
+    height: 58px;
+    margin-left: 1%;
+    margin-bottom: 0.8%;
+  }
+
+  .search-cart {
+    height: auto;
+    display: inline;
+    width: 60%;
+    margin-right: -5.5%;
+    position: relative;
+    margin-top: 1.5%;
+  }
+  .serch-cart-container {
+    height: auto;
+    width: 38%;
+    position: absolute;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #4e4e4e;
+    right: 15.3%;
+    top: 6%;
+    background-color: #fff;
+    z-index: 1;
+    overflow: scroll;
+  }
+  .serch-cart-container1 {
+    height: auto;
+    width: 38%;
+    position: absolute;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #4e4e4e;
+    right: 15.3%;
+    top: 6%;
+    background-color: #fff;
+    z-index: 1;
+    overflow: scroll;
+  }
+  .serch-cart-input {
+    display: none;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 4%;
+    width: 65%;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    outline: 1px;
+    outline-color: #9e9e9e;
+  }
+  .search-icon-button {
+    display: none;
+    position: absolute;
+    height: 50%;
+    width: 6.5%;
+    top: 26.5%;
+    left: 56%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent;
+    border-width: 0px;
+  }
+  .search-icon {
+    display: none;
+    position: absolute;
+    height: 85%;
+    width: 150%;
+    margin: 0px;
+  }
+  .cart-icon-buttonn {
+    display: none;
+    position: absolute;
+    height: 85%;
+    width: 20%;
+    top: 12%;
+    left: 75%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent;
+    border-width: 0px;
+  }
+  .cart-icon {
+    display: none;
+    position: absolute;
+    height: 85%;
+    width: 85%;
+    margin: 0px;
+  }
+  .count-of-cart {
+    display: none;
+    position: absolute;
+    color: #4e4e4e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    left: 81%;
+    top: 8%;
+    background-color: #fff;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    z-index: 1;
+    border-color: #f4bd18;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 0.8%;
+    padding-right: 0.8%;
+  }
+  .beautyzone-body {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .left-arrow-mobile {
+    color: #4e4e4e;
+    height: 3vh;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+  .location-mobilee {
+    height: 3.5vh;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .arrow-btn {
+    padding-left: 0%;
+    border-color: transparent;
+    background-color: transparent;
+    margin-right: 1%;
+  }
+  .location-btnn {
+    position: absolute;
+    margin-left: 6%;
+    margin-top: 1%;
+    border-color: transparent;
+    background-color: transparent;
+    padding-left: 0px;
+  }
+  .search-btn-fashion {
+    top: 23%;
+    left: 72%;
+    position: absolute;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  .notification-btnn {
+    position: absolute;
+    top: 23%;
+    left: 79%;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  .search-mobile {
+    color: #4e4e4e;
+    height: 2.5vh;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    position: absolute;
+  }
+
+  .favourites {
+    color: #4e4e4e;
+    height: 2.5vh;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+  .notification-mobile {
+    color: #3e3e3e;
+    height: 2.5vh;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+  .dropdown-container {
+    position: absolute;
+    margin-left: 15%;
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+  }
+
+  .beautyzone-body-2 {
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .profile-block2 {
+    border-style: solid;
+    height: auto;
+    width: 13vw;
+    position: absolute;
+    right: 5%;
+    bottom: -100%;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.3vw;
+    color: #3e3e3e;
+    padding-left: 1%;
+    border-width: 0px;
+    cursor: pointer;
+    z-index: 3;
+    border-width: 1px;
+    border-color: #9e9e9e;
+    outline: none;
+    text-decoration: none;
+  }
+  .profile-block2 :hover {
+    color: #f4bd18;
+  }
+
+  .our-services {
+    background-color: #fffaed;
+    width: 100%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #3e3e3e;
+    position: relative;
+    font-weight: bold;
+    flex-wrap: wrap;
+    padding-top: 5%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .our-services-head {
+    position: absolute;
+    top: 1%;
+    left: 5%;
+  }
+  .our-services-btn {
+    border-color: transparent;
+    background-color: transparent;
+    margin-top: 30%;
+    margin-right: 5%;
+    margin-left: -9%;
+    cursor: pointer;
+  }
+  .our-services-img {
+    height: 10vh;
+    width: 22vw;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f4bd18;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  .our-services-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #4e4e4e;
+    font-weight: Bold;
+    cursor: pointer;
+  }
+  .cosmatic-products-con {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  .cosmatic-videoItem {
+    height: 18vh;
+    width: 70vw;
+    margin-left: 1%;
+    margin-right: 1%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  .beauty-cosmetic-products3 {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+    margin-left: 2%;
+  }
+  .log-btn {
+    width: 90%;
+    text-align: start;
+    background-color: transparent;
+    border-width: 0px;
+    font-size: 3.2vw;
+    margin-left: 0px;
+    margin-bottom: 5px;
+  }
+  .diable-logoo {
+    display: none;
+  }
+  .each-service-each {
+    display: inline-block;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    text-decoration: none;
+    color: #000;
+    z-index: 5;
+  }
+}

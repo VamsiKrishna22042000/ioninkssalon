@@ -1,0 +1,328 @@
+@media screen and (min-width: 992px) {
+  .detailed-view-body {
+    height: auto;
+    width: 100vw;
+  }
+  .detailed-view-head {
+    display: none;
+  }
+  .detailed-view-sub-body {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  .detailed-view-image {
+    margin-top: 5%;
+    height: 85vh;
+    width: 90%;
+    margin-left: 5%;
+  }
+  .fashion-details-content {
+    position: relative;
+    height: auto;
+    width: 100vw;
+    font-size: 1.1vw;
+    margin-left: 55%;
+  }
+  .fashion-details-head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    color: #3e3e3e;
+  }
+  .fashion-selected-price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: #8d8d8f;
+  }
+  .fashion-selected-rating {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: #3e3e3e;
+  }
+  .fashion-selected-offer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: #eb5757;
+    margin-left: 1%;
+  }
+  .fashion-selected-price-icon {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: #8d8d8f;
+    text-decoration: line-through;
+  }
+  .fashion-details-about {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .fashion-details-size-selection {
+    height: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .fashion-size-select {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: #8d8d8f;
+    border-radius: 5px;
+    color: #8d8d8f;
+    width: 3px;
+  }
+  .fashion-size-select1 {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: orange;
+    border-radius: 5px;
+    color: orange;
+    width: 3px;
+  }
+  .fashion-color-select {
+    padding: 5%;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: grey;
+    border-width: 3px;
+  }
+  .fashion-color-select1 {
+    padding: 5%;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: orange;
+    border-width: 3px;
+  }
+  .fashion-cartBag-btn {
+    display: none;
+  }
+  .fashion-count-of-cart-cart {
+    display: inline-flex;
+    position: absolute;
+    color: #4e4e4e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    left: 80.5%;
+    top: 35%;
+    background-color: #fff;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    z-index: 1;
+    border-color: #f4bd18;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+  }
+  .sukras-header-fashion {
+    height: 12%;
+    width: 100%;
+    padding: 0px;
+    padding-top: 1.5%;
+    padding-left: 2%;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .detailed-view-body {
+    height: auto;
+    width: 100vw;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+  }
+  .detailed-view-head {
+    position: absolute;
+    padding: 0px;
+    align-self: center;
+    left: 35%;
+    right: 30%;
+    text-align: center;
+  }
+  .detailed-view-sub-body {
+    height: auto;
+    width: 100%;
+  }
+  .detailed-view-image {
+    margin-top: 5%;
+    height: 5%;
+    width: 100%;
+    margin-left: 1.2%;
+  }
+  .fashion-details-content {
+    height: auto;
+    width: 85%;
+    padding-top: 5%;
+    padding-left: 9.5%;
+    font-size: 3vw;
+    margin-left: -4%;
+  }
+  .fashion-details-head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vw;
+    color: #3e3e3e;
+  }
+  .fashion-selected-price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #8d8d8f;
+  }
+  .fashion-selected-rating {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #3e3e3e;
+  }
+  .fashion-selected-offer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #eb5757;
+    margin-left: 1%;
+  }
+  .fashion-selected-price-icon {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #8d8d8f;
+    text-decoration: line-through;
+  }
+  .fashion-details-about {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.2vw;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-top: 3.5%;
+    margin-bottom: 3.5%;
+  }
+  .fashion-details-size-selection {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .fashion-size-select1 {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: Orange;
+    border-radius: 5px;
+    color: orange;
+  }
+  .fashion-size-select {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: #8d8d8f;
+    border-radius: 5px;
+    color: #8d8d8f;
+  }
+  .fashion-color-select {
+    padding: 5%;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3e3e3e;
+  }
+  .fashion-color-select1 {
+    padding: 5%;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: orange;
+  }
+  .fashion-cartBag-btn {
+    position: absolute;
+    height: 4vh;
+    width: 10.5vw;
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 0%;
+    right: 17%;
+    margin-top: -5.5%;
+  }
+  .fashion-cartBag {
+    color: #4e4e4e;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    height: 3.5vh;
+  }
+  .fashion-count-of-cart-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #4e4e4e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.5vw;
+    right: 27%;
+    background-color: #fff;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    z-index: 1;
+    border-color: #4e4e4e;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 2.2%;
+    padding-right: 2.2%;
+    padding-bottom: 0.1%;
+    padding-bottom: 0.1%;
+    top: 35%;
+  }
+
+  .sukras-header-fashion {
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+    padding: 0px;
+  }
+}

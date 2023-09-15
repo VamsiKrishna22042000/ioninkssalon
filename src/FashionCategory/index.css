@@ -1,0 +1,444 @@
+@media screen and (min-width: 992px) {
+  .fashion-category {
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .fashion-category-main-body {
+    height: auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top: 7%;
+    position: relative;
+  }
+  .fashion-zone-filter {
+    height: auto;
+    width: 18%;
+    margin-left: 7%;
+    margin-right: 3%;
+    border-style: solid;
+    border-color: #d7d7d7;
+    padding-left: 1.5%;
+    border-width: 1px;
+    padding-bottom: 0px;
+  }
+  .filter-zone-text {
+    width: 85%;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toup {
+    transform: rotate(-90deg);
+    cursor: pointer;
+  }
+  .todown {
+    transform: rotate(90deg);
+    cursor: pointer;
+  }
+  .fashion-zone-options {
+    border-color: #f2f2f2;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-width: 2px;
+    height: auto;
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5c5c5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-bottom: 5%;
+    cursor: pointer;
+  }
+  .fashion-zone-opitons-disable {
+    display: none;
+  }
+  .fashion {
+    height: 5vh;
+    width: 86%;
+    margin-left: 6%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 1.5vw;
+    color: #5c5c5c;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+    padding-left: 1.5%;
+    margin-bottom: 0%;
+  }
+  .sort-by {
+    position: absolute;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 1vw;
+    color: #9c9c9c;
+    margin-top: 2.5%;
+    left: 74.3%;
+  }
+  .fashion-sortby {
+    height: 7vh;
+    width: 23%;
+    margin-top: 1.7%;
+    margin-left: 72%;
+    outline: none;
+    padding-left: 5%;
+    border-style: solid;
+    border-color: grey;
+  }
+
+  .fashion-category-body {
+    height: auto;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cartBag-btn {
+    display: none;
+  }
+  .fashion-category-item {
+    height: 38vh;
+    width: 20%;
+    margin-left: 4.5%;
+    border-radius: 8px;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 1px 1px 1px 1px #b5a9a940;
+    position: relative;
+    text-decoration: none;
+  }
+  .fashion-category-image {
+    height: 25vh;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .fashion-item-name {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+  }
+  .fashion-item-price {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #f18c15;
+    margin-left: 5%;
+    margin-top: 0px;
+    margin-bottom: 5%;
+  }
+  .price-details-off {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+  }
+  .price-details-rating {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    padding-bottom: 8%;
+  }
+  .fashion-item-discount {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #9c9c9c;
+    margin-left: 15%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    text-decoration: line-through;
+  }
+  .fashion-item-offer {
+    background-color: #ffe37d;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    text-decoration: line-through;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  .fashion-item-star {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #5c5c5c;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  .fashion-item-reviews {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #5c5c5c;
+    margin-left: 0%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  .fashion-item-star-rating {
+    height: 2vh;
+    width: 1vw;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  .fashioncategory-count-of-cart {
+    display: inline-flex;
+    position: absolute;
+    color: #4e4e4e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    left: 80.5%;
+    top: 35%;
+    background-color: #fff;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    z-index: 1;
+    border-color: #f4bd18;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .fashion-category {
+    height: auto;
+    width: 100vw;
+    padding-top: 2%;
+  }
+  .fashion {
+    display: none;
+  }
+  .fashion-category-main-body {
+    height: auto;
+    width: 100%;
+  }
+  .fashion-zone-filer {
+    display: none;
+  }
+  .fashion-category-body {
+    height: auto;
+    width: 100vw;
+    padding-top: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .fashion-sortby {
+    display: none;
+  }
+  .fashion-zone-filter {
+    height: auto;
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-style: solid;
+    border-color: #d7d7d7;
+    padding-left: 1.5%;
+    border-width: 1px;
+    padding-bottom: 0px;
+    margin-top: 5%;
+  }
+  .filter-zone-text {
+    display: flex;
+  }
+  .cartBag-btn {
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  .cartBag {
+    color: #4e4e4e;
+    height: 2.5vh;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    height: 3.5vh;
+  }
+  .fashion-category-item {
+    height: auto;
+    width: 43%;
+    margin-left: 4.5%;
+    border-radius: 8px;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 1px 1px 1px 1px #b5a9a940;
+    position: relative;
+    text-decoration: none;
+  }
+  .fashion-category-image {
+    height: 20vh;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .fashion-item-name {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+  }
+  .fashion-item-price {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: #f18c15;
+    margin-left: 5%;
+    margin-top: 0px;
+    margin-bottom: 5%;
+  }
+  .price-details-off {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+  }
+  .price-details-rating {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    padding-bottom: 8%;
+  }
+  .fashion-item-discount {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: #9c9c9c;
+    margin-left: 15%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    text-decoration: line-through;
+  }
+  .fashion-item-offer {
+    background-color: #ffe37d;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    text-decoration: line-through;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  .fashion-item-star {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: #5c5c5c;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  .fashion-item-reviews {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: #5c5c5c;
+    margin-left: 0%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  .fashion-item-star-rating {
+    height: 1.5vh;
+    width: 3vw;
+    margin-top: 3.3%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  .fashioncategory-count-of-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #4e4e4e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    top: 45%;
+    right: 25%;
+    background-color: #fff;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    z-index: 1;
+    border-color: #4e4e4e;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 2.2%;
+    padding-right: 2.2%;
+    margin-top: -3%;
+  }
+
+  .toup {
+    transform: rotate(-90deg);
+    cursor: pointer;
+  }
+  .todown {
+    transform: rotate(90deg);
+    cursor: pointer;
+  }
+  .fashion-zone-options {
+    border-color: #f2f2f2;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-width: 2px;
+    height: auto;
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5c5c5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-bottom: 5%;
+    cursor: pointer;
+  }
+  .fashion-zone-opitons-disable {
+    display: none;
+  }
+}

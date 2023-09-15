@@ -1,0 +1,158 @@
+@media screen and (min-width:992px){
+    .verify{
+        align-self:flex-start;
+        width: 60.5%;
+        margin-left:17%;
+        margin-top:3%;
+        height:10%;
+        border-width:0px;
+        border-radius:5px;
+        background-color:#9c9c9c;
+        color:#fff;
+        font-size:1vw;
+        margin-bottom:10%;
+        padding:3%;
+    }
+
+    .otp-verify-2{
+        align-self:flex-start;
+        width: 60.5%;
+        margin-left:17%;
+        margin-top:3%;
+        height:10%;
+        border-width:0px;
+        border-radius:5px;
+        background-color:#ffcc33;
+        color:#fff;
+        font-size:1vw;
+        margin-bottom:10%;
+        padding:3%;
+    }
+    .resend-otp{
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color:#9c9c9c;
+        font-size:0.8rem;
+        margin-top:0px;
+        align-self:flex-start;
+        margin-top:3%;
+        margin-left:17%;    
+        margin-bottom:0px;
+    }
+
+    .resend-otp-span{
+      color:#ffcc33;
+      font-weight:bold;
+    }
+
+    .otp-box{
+        height:10%;
+        width:55%;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        margin-top:0px;
+        margin-bottom:0px;
+        margin-left:-6%;
+    }
+
+    .otp-input{
+        height:90%;
+        width:12%;
+        font-size:1.5rem;
+        overflow:none;
+        border-color: #9c9c9c;
+        border-style:solid;
+        border-width:2px;
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        padding-left:8%;
+        outline:none;
+        margin:0px;
+    }
+
+    .otp-input2{
+       border-color:#ffcc33;
+    }
+
+}
+
+
+@media screen and (max-width:600px){
+    .verify{
+        align-self:flex-start;
+        width: 80%;
+        margin-left:10%;
+        margin-top:10%;
+        height:10%;
+        border-width:0px;
+        border-radius:5px;
+        background-color:#9c9c9c;
+        color:#fff;
+        font-size:4.5vw;
+        margin-bottom:20%;
+        padding:3%;
+    }
+
+    .otp-verify-2{
+        align-self:flex-start;
+        width: 80%;
+        margin-left:10%;
+        margin-top:10%;
+        height:10%;
+        border-width:0px;
+        border-radius:5px;
+        background-color:#ffcc33;
+        color:#fff;
+        font-size:4.5vw;
+        margin-bottom:20%;
+        padding:3%;
+    }
+    .resend-otp{
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color:#9c9c9c;
+        font-size:1rem;
+        margin-top:0px;
+        align-self:flex-start;
+
+        margin-left:10%;    
+        margin-bottom:0px;
+    }
+
+    .resend-otp-span{
+      color:#ffcc33;
+      font-weight:bold;
+    }
+
+    .otp-box{
+        height:10%;
+        width:55%;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        margin-top:1%;
+        margin-bottom:6%;
+        margin-left:-5%;
+    }
+
+    .otp-input{
+        height:90%;
+        width:12%;
+        font-size:1.5rem;
+        overflow:none;
+        border-color: #9c9c9c;
+        border-style:solid;
+        border-width:2px;
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        padding-left:8%;
+        outline:none;
+        margin:0px;
+    }
+
+    .otp-input2{
+       border-color:#ffcc33;
+    }
+
+}

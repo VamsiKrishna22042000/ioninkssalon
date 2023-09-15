@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/**Sign up page left box css*/
+
+.signupimage {
+  position: absolute;
+  max-width: 100%;
+  transform: rotate(35deg) scale(1.4);
+  top: 20%;
+  left: -28%;
+  border-radius: 7rem;
+  filter: drop-shadow(-45px -60px 6px #e5ebfe);
+}
+
+.salon-logo {
+  position: absolute;
+  max-width: 30%;
+  top: 1%;
+  left: 1%;
+}
+
+.signup-main-con h2 {
+  font-family: "Instrument Sans", sans-serif;
+  position: absolute;
+  transform: scale(2.5);
+  top: 15%;
+  left: 45%;
+  z-index: 1;
+  color: #4444d5;
+}
+
+/**Sign up right box css*/
+
+.signup-super-main-con {
+  height: 100vh;
+  width: 100vw;
+}
+
+.signup-main-con {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-main-con div {
+  width: 50%;
+  font-family: "Instrumental Sans", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-main-con div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.3rem;
+}
+
+.sign-in-inputs p {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+}
+
+#redirection-para {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.75rem;
+  width: 40%;
+  margin-right: -15%;
+  line-height: 1.5rem;
+}
+
+.signup-main-con span {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem;
+  padding-left: 2%;
+  color: #4444d5;
+  cursor: pointer;
+}
+
+.signup-main-con h1 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 2.8rem;
+  color: #4444d5;
+  font-weight: 900;
+}
+
+.signup-main-con div div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-left: 5%;
+}
+
+.sign-in-inputs p {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #4444d5;
+}
+
+.sign-in-inputs input {
+  width: 95%;
+  outline-color: #222222;
+  outline: 0.1rem;
+  border-top: hidden;
+  border-right: hidden;
+  border-left: hidden;
+  border-color: #222222;
+  font-size: 1rem;
+  padding-left: 2%;
+}
+
+.sign-in-inputs button {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.1rem;
+  align-self: center;
+  padding: 2% 5%;
+  margin-top: 5%;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: #4444d5 1px solid;
+  background-color: #4444d5;
+  cursor: pointer;
+}
+
+.sign-in-inputs button:hover {
+  color: #4444d5;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  /** right box css**/
+  .signup-main-con {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .signup-main-con div {
+    width: 90%;
+    align-self: center;
+  }
+
+  .signup-main-con div:nth-child(2) {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    overflow: visible;
+  }
+
+  .signup-main-con p {
+    font-size: 1rem;
+  }
+
+  #redirection-para {
+    width: 100%;
+    margin: 0;
+    font-size: 0.8rem;
+    gap: 3rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  .signup-main-con span {
+    font-size: 1rem;
+  }
+
+  .sign-in-inputs input {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    background-color: transparent;
+    background-color: #ffffff40;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .sign-in-inputs button {
+    font-size: 1rem;
+    padding: 3% 7%;
+  }
+
+  /**left box css*/
+  .signup-main-con div:nth-child(1) {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .signup-main-con h2 {
+    display: none;
+  }
+
+  .signup-main-con img {
+    top: 35%;
+    transform: rotate(45deg) scale(2);
+    border-radius: 2rem;
+    left: -60%;
+    filter: blur(0.7rem);
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+  .signup-main-con {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .signup-main-con div:nth-child(1) {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .signup-main-con img {
+    top: 35%;
+    left: -40%;
+    transform: rotate(40deg) scale(1.65);
+    filter: blur(0.5rem);
+  }
+  .signup-main-con h2 {
+    display: none;
+  }
+  .signup-main-con div:nth-child(2) {
+    width: 80%;
+    gap: 5rem;
+    background-color: #ffffff40;
+    padding: 5%;
+    border-radius: 5%;
+  }
+  .signup-main-con h1 {
+    font-size: 5rem;
+  }
+  .signup-main-con p {
+    font-size: 1.5rem;
+  }
+  .sign-in-inputs input {
+    font-size: 1.5rem;
+    background-color: transparent;
+    margin-bottom: 1.5rem;
+  }
+  .sign-in-inputs button {
+    font-size: 2rem;
+  }
+
+  .signup-main-con span {
+    font-size: 1.5rem;
+  }
+  #redirection-para {
+    width: 70%;
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .signup-main-con {
+    overflow: scroll;
+    height: auto;
+  }
+  .signup-main-con div:nth-child(1) {
+    border-style: solid;
+    position: absolute;
+    height: 200%;
+  }
+  .signup-main-con div:nth-child(2) {
+    width: 70%;
+    height: 100%;
+    background-color: transparent;
+  }
+
+  .signup-main-con div h1 {
+    font-size: 2rem;
+  }
+  .signup-main-con div p {
+    font-size: 1rem;
+  }
+
+  .sign-in-inputs input {
+    font-size: 1rem;
+  }
+  .signup-main-con button {
+    font-size: 1.5rem;
+  }
+  .signup-main-con span {
+    font-size: 1rem;
+  }
+  #redirection-para {
+    font-size: 0.9rem;
+    width: 55%;
+  }
+}

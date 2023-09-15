@@ -1,0 +1,324 @@
+.loader-spinner {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (min-width: 992px) {
+  .fashion-total-container-payment {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff6d4;
+    border-radius: 5px;
+    height: 5vh;
+    width: 70%;
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+  .counter-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #f4bd18;
+    font-size: 2vw;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
+  .counter-para {
+    color: #f4bd18;
+  }
+  .fashion-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .payment-mode-fashion {
+    height: auto;
+    background-color: transparent;
+    width: 45%;
+    margin-left: 3%;
+    padding-right: 1.8%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-style: solid;
+    border-color: #dfdfdf;
+    border-left: hidden;
+    border-top: hidden;
+    border-bottom: hidden;
+  }
+  .fashion-paymentmode-head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;
+    color: #3e3e3e;
+    font-weight: 500;
+    margin-bottom: 5%;
+    width: 100%;
+    display: inline-block;
+  }
+  .fashion-payment-modebutton1 {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 45%;
+    margin-left: 0px;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    border-radius: 8px;
+    background: transparent;
+    border-color: transparent;
+    border-width: 1px;
+    box-shadow: 1px 1px 6px 0px #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    color: #3e3e3e;
+    font-weight: bold;
+    padding: 0.5vh;
+    position: relative;
+    margin-left: 1.5vw;
+  }
+  .fashion-payment-modebutton2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 45%;
+    margin-left: 0px;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    border-radius: 8px;
+    background: #cecece;
+    border-color: red;
+    border-width: 1px;
+    box-shadow: 1px 1px 6px 0px #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    color: #3e3e3e;
+    font-weight: bold;
+    padding: 0.5vh;
+    position: relative;
+    filter: blur(1px);
+    margin-left: 1.5vw;
+  }
+  .fashion-payment-modebutton3 {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 45%;
+    margin-left: 0px;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    border-radius: 8px;
+    background: transparent;
+    border-color: rgb(2, 151, 2);
+    border-width: 1px;
+    box-shadow: 1px 1px 6px 0px #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    color: #3e3e3e;
+    font-weight: bold;
+    padding: 0.5vh;
+    position: relative;
+    margin-left: 1.5vw;
+  }
+  .fashion-proceed-to-schedule {
+    color: #fff;
+    background-color: #f4bd18;
+    border-width: 0px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    width: 50%;
+    padding-top: 1.8vh;
+    padding-bottom: 1.8vh;
+    margin-top: 5%;
+    margin-bottom: 10vh;
+  }
+
+  .fashion-proceed-button-disable {
+    display: none;
+  }
+  .fashion-address {
+    height: 30vh;
+    width: 90%;
+    margin-left: -5%;
+    margin-top: -5%;
+    margin-bottom: 5%;
+  }
+  .input-address {
+    height: 80%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 844px) {
+  .fashion-total-container-payment {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff6d4;
+    height: 5vh;
+    width: 70%;
+    border-radius: 8px;
+    margin-left: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  .counter-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #f4bd18;
+    font-size: 6vw;
+  }
+  .counter-para {
+    color: #f4bd18;
+  }
+  .fashion-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .payment-mode-fashion {
+    height: auto;
+    background-color: transparent;
+    width: 90%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    order: 2;
+  }
+  .fashion-paymentmode-head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4.3vw;
+    color: #3e3e3e;
+    margin-bottom: 5%;
+    align-self: flex-start;
+  }
+  .fashion-payment-modebutton1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    border-radius: 8px;
+    background: transparent;
+    border-color: transparent;
+    border-width: 1px;
+    box-shadow: 1px 1px 6px 0px #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #3e3e3e;
+    font-weight: bold;
+    padding: 1vh;
+    position: relative;
+  }
+  .fashion-payment-modebutton2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    border-radius: 8px;
+    background-color: #cecece;
+    border-color: rgb(250, 2, 2);
+    border-width: 1px;
+    box-shadow: 1px 1px 6px 0px #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #3e3e3e;
+    font-weight: bold;
+    filter: blur(1.2px);
+    padding: 1vh;
+    position: relative;
+  }
+  .fashion-payment-modebutton3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    border-radius: 8px;
+    background-color: transparent;
+    border-color: rgb(0, 156, 0);
+    border-width: 1.5px;
+    box-shadow: 1px 1px 6px 0px #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    color: #3e3e3e;
+    font-weight: bold;
+    padding: 1vh;
+    position: relative;
+  }
+  .fashion-proceed-to-schedule {
+    color: #fff;
+    background-color: #f4bd18;
+    border-width: 0px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    width: 100%;
+    padding-top: 1.8vh;
+    padding-bottom: 1.8vh;
+    margin-top: 5%;
+    margin-bottom: 10vh;
+  }
+
+  .fashion-proceed-button-disable {
+    display: none;
+  }
+  .fashion-address {
+    height: 30vh;
+    width: 90%;
+    margin-left: -2%;
+    margin-top: -5%;
+    margin-bottom: 10%;
+  }
+  .input-address {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
