@@ -140,6 +140,8 @@
 @media screen and (max-width: 600px) {
   /** right box css**/
   .signup-main-con {
+    height: auto;
+    width: auto;
     flex-direction: column;
     justify-content: center;
   }
@@ -150,13 +152,14 @@
   }
 
   .signup-main-con div:nth-child(2) {
-    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     overflow: visible;
+    position: relative;
+    margin-top: 28%;
   }
 
   .signup-main-con p {
@@ -211,6 +214,8 @@
 
 @media screen and (min-width: 601px) and (max-width: 991px) {
   .signup-main-con {
+    height: auto;
+    width: auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -230,6 +235,7 @@
     display: none;
   }
   .signup-main-con div:nth-child(2) {
+    margin-top: 8%;
     width: 80%;
     gap: 5rem;
     background-color: #ffffff40;
@@ -273,7 +279,7 @@
   }
   .signup-main-con div:nth-child(2) {
     width: 70%;
-    height: 100%;
+    height: auto;
     background-color: transparent;
   }
 
