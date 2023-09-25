@@ -35,8 +35,7 @@
   padding-left: 5%;
   padding-right: 5%;
   z-index: 3;
-  position: -webkit-sticky; /* For older WebKit-based browsers */
-  position: sticky;
+  position: fixed;
   background-color: #fff;
 }
 
@@ -144,7 +143,7 @@
 /**Min page*/
 .head-page-con {
   position: relative;
-  height: 85%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -250,7 +249,8 @@
 
   /**Nav Bar Css*/
   .saloninks-navbar-con {
-    height: 5%;
+    height: 6%;
+    position: fixed;
     width: 100%;
     z-index: 3;
   }
@@ -294,14 +294,16 @@
     background: #222222;
     transition: all 1s ease-in-out;
     transform: rotate(-45deg);
+    margin-left: -5%;
+    margin-top: -5%;
   }
 
   .nav-bar-content {
     background-color: #5a5ad545;
-    position: absolute;
+    position: fixed;
     height: auto;
-    width: 83%;
-    top: 5%;
+    width: 85%;
+    top: 8%;
     z-index: 3;
     height: 40%;
     animation: show-navbar 1s ease-in-out forwards;
@@ -388,7 +390,7 @@
     display: inline;
     height: 100vh;
     width: 85vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -454,6 +456,7 @@
   .saloninks-navbar-con {
     height: 5%;
     width: 100%;
+    position: fixed;
     z-index: 3;
   }
 
@@ -500,12 +503,12 @@
 
   .nav-bar-content {
     background-color: #5a5ad545;
-    position: absolute;
+    position: fixed;
     height: auto;
     width: 75%;
-    top: 8%;
+    top: 10%;
     z-index: 3;
-    height: 45%;
+    height: 48%;
     animation: show-navbar 1s ease-in-out forwards;
     display: flex;
     flex-direction: column;
@@ -588,7 +591,7 @@
     display: inline;
     height: 100vh;
     width: 85vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -652,7 +655,7 @@
   }
 }
 
-@media screen and (max-width: 900px) and (orientation: landscape) {
+@media screen and (max-width: 1050px) and (orientation: landscape) {
   .saloninks-home-con {
     height: 100vh;
     width: 100vw;
@@ -711,9 +714,9 @@
     position: absolute;
     height: auto;
     width: 40%;
-    top: 5%;
+    top: -10%;
     z-index: 3;
-    height: 60%;
+    height: 90%;
     animation: show-navbar 1s ease-in-out forwards;
     display: flex;
     flex-direction: column;
@@ -802,7 +805,7 @@
     display: inline;
     height: 100vh;
     width: 85vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
