@@ -11,7 +11,7 @@ import { Link, Redirect } from "react-router-dom";
 
 import Cookies from "js-cookie";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { BsHandbag } from "react-icons/bs";
 
@@ -502,7 +502,7 @@ const FashionDetailedView = (props) => {
     </div>
   ) : (
     <div className="loader-spinner">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

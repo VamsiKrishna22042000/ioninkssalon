@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import moment from "moment";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { useState, useEffect } from "react";
 
@@ -386,7 +386,7 @@ const CartItems = (props) => {
 
   return stage === pageStage.loading ? (
     <div className="loader-spinner">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   ) : (
     <>
@@ -398,7 +398,7 @@ const CartItems = (props) => {
       />
       {displayArr.length === 0 ? (
         <div className="total-con-cartitems">
-          <TailSpin color={"#F4BD18"} height={70} width={70} />
+          <InfinitySpin color={"#4444D5"} height={150} width={150} />
         </div>
       ) : (
         <div className="total-con-cartitems">

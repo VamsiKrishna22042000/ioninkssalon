@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import Cookies from "js-cookie";
 
@@ -330,7 +330,7 @@ const Beautyzone = (props) => {
         <div className="beautyzone-body-2">
           {categories.length === 0 ? (
             <div className="service-spinner">
-              <TailSpin color={"#F4BD18"} height={70} width={70} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           ) : (
             <>
@@ -479,7 +479,7 @@ const Beautyzone = (props) => {
                   src={each.photos[0]}
                   alt={each.category}
                 />
-                <p className="cosmatic-product-name">{each.name}</p>
+                <p className="cosmatic-product-box2">{each.name}</p>
               </Link>
             ))}
            
@@ -509,7 +509,7 @@ const Beautyzone = (props) => {
                   src={each.photos[0]}
                   alt={each.category}
                 />
-                <p className="cosmatic-product-name">{each.name}</p>
+                <p className="cosmatic-product-box2">{each.name}</p>
               </Link>
             ))}
           </div>
@@ -519,7 +519,7 @@ const Beautyzone = (props) => {
     </>
   ) : (
     <div className="loader-spinner">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

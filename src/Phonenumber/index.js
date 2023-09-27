@@ -13,7 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import ModalBox from "./modalbox.js";
 
 import { useState } from "react";
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 import Cookies from "js-cookie";
 
 const Phonenumber = (props) => {
@@ -118,14 +118,14 @@ const Phonenumber = (props) => {
           className="otp-2"
           type="button"
         >
-          <TailSpin height={20} width={20} color="#FFFFFF" />
+          <InfinitySpin height={20} width={20} color="#FFFFFF" />
         </button>
       )}
       <p className="signUp-phoneno">
         If not registered click
         <span
           onClick={settingShow}
-          style={{ color: "#FFC300", cursor: "pointer" }}
+          style={{ color: "#4444D5", cursor: "pointer" }}
         >
           {" "}
           SignUP

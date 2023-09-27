@@ -4,7 +4,7 @@ import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 const ModalBoxEdit = (props) => {
   const {
@@ -268,11 +268,6 @@ const ModalBoxEdit = (props) => {
                   Edit
                 </button>
                 <button
-                  style={{
-                    paddingTop: "1%",
-                    paddingBottom: "3%",
-                    color: "white",
-                  }}
                   className="service-button-admin"
                   onClick={setEditModelFunc}
                   type="button"
@@ -281,7 +276,12 @@ const ModalBoxEdit = (props) => {
                 </button>
 
                 <button
-                  style={{ bottom: "20%", cursor: "pointer" }}
+                  style={{
+                    bottom: "25%",
+                    borderRadius: ".3rem",
+                    width: "5rem",
+                    cursor: "pointer",
+                  }}
                   className="service-button-admin-faq"
                   onClick={() => {
                     setfaq(!showfaq);
@@ -404,6 +404,7 @@ const ModalBoxEdit = (props) => {
               </div>
               <div className="service-button-admin-con">
                 <button
+                  style={{ paddingTop: "2%", paddingBottom: "2%" }}
                   onClick={updatingServices}
                   className="service-button-admin"
                   type="button"
@@ -411,11 +412,7 @@ const ModalBoxEdit = (props) => {
                   Edit
                 </button>
                 <button
-                  style={{
-                    paddingTop: "1%",
-                    paddingBottom: "3%",
-                    color: "white",
-                  }}
+                  style={{ paddingTop: "2%", paddingBottom: "2%" }}
                   className="service-button-admin"
                   onClick={setEditModelFunc}
                   type="button"
@@ -424,7 +421,12 @@ const ModalBoxEdit = (props) => {
                 </button>
 
                 <button
-                  style={{ bottom: "-50%", cursor: "pointer" }}
+                  style={{
+                    bottom: "-50%",
+                    borderRadius: ".3rem",
+                    width: "5rem",
+                    cursor: "pointer",
+                  }}
                   className="service-button-admin-faq"
                   onClick={() => {
                     setfaq(!showfaq);
@@ -440,7 +442,7 @@ const ModalBoxEdit = (props) => {
       ) : (
         <div className="modal-box">
           <div className="spinner-edit">
-            <TailSpin color={"#F4BD18"} height={70} width={70} />
+            <InfinitySpin color={"#4444D5"} height={150} width={150} />
           </div>
         </div>
       )}

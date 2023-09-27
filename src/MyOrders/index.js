@@ -3,7 +3,7 @@ import "./index.css";
 
 import Footer from "../footer/footer.js";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { useEffect, useState } from "react";
 
@@ -187,7 +187,7 @@ const MyOrders = (props) => {
     )
   ) : (
     <div className="loader-container-myorders">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

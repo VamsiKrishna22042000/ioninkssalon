@@ -2,7 +2,7 @@ import "./index.css";
 
 import { useState, useEffect } from "react";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import Cookies from "js-cookie";
 
@@ -61,46 +61,46 @@ const Orders = () => {
     <>
       <div className="dashboard-component2">
         <div className="avialable-products-head">
-          <div className="product-image">
+          <div className="product-box">
             <p className="product-heads">Image</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box2">
             <p className="product-heads">Open/Close</p>
           </div>
 
-          <div className="product-name">
+          <div className="product-box2">
             <p className="product-heads">Name</p>
           </div>
 
-          <div className="product-name">
+          <div className="product-box2">
             <p className="product-heads">User Name</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box2">
             <p className="product-heads">Price</p>
           </div>
 
           <div className="product-id">
             <p className="product-heads">Address</p>
           </div>
-          <div className="product-action">
+          <div className="product-box6">
             <p className="product-heads">Count</p>
           </div>
-          <div className="product-action">
+          <div className="product-box6">
             <p className="product-heads">Booking Date</p>
           </div>
         </div>
         {myorders.map((each) => (
           <div key={each._id} id={each._id} className="avialable-products">
-            <div className="product-image">
+            <div className="product-box">
               <img
                 className="productimage"
                 src={each.photos[0]}
                 alt="productimage"
               />
             </div>
-            <div id={each._id} className="product-toggle">
+            <div id={each._id} className="product-box2">
               {buttonToggle === each._id ? (
-                <TailSpin color={"#F4BD18"} height={50} width={50} />
+                <InfinitySpin color={"#4444D5"} height={150} width={150} />
               ) : (
                 <div className={each.active ? "toggle-con3" : "toggle-con4"}>
                   <button
@@ -112,7 +112,7 @@ const Orders = () => {
                 </div>
               )}
             </div>
-            <div className="product-name">
+            <div className="product-box2">
               <p
                 style={{
                   textTransform: "capitalize",
@@ -128,7 +128,7 @@ const Orders = () => {
                 {each.name}
               </p>
             </div>
-            <div className="product-name">
+            <div className="product-box2">
               <p
                 style={{
                   textTransform: "capitalize",
@@ -144,7 +144,7 @@ const Orders = () => {
                 <p />
               </p>
             </div>
-            <div id={each._id} className="product-toggle">
+            <div id={each._id} className="product-box2">
               <p style={{ textTransform: "capitalize" }}>
                 ₹ {each.price * each.count}
               </p>
@@ -165,10 +165,10 @@ const Orders = () => {
                 {each.address}
               </p>
             </div>
-            <div className="product-action">
+            <div className="product-box6">
               <p>{each.count}</p>
             </div>
-            <div className="product-action">
+            <div className="product-box6">
               <p>{each.orderedAt}</p>
             </div>
           </div>
@@ -177,7 +177,7 @@ const Orders = () => {
     </>
   ) : (
     <div className="loader-spinner-admin">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

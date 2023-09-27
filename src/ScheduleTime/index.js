@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 /*PaymentSection is here*/
 
@@ -145,7 +145,7 @@ const ScheduleTime = (props) => {
 
       {button ? (
         <button className="proceed-to-schedule" type="button">
-          <TailSpin
+          <InfinitySpin
             wrapperStyle={{ alignSelf: "center", justifyContent: "center" }}
             color={"white"}
             height={20}

@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -250,7 +250,7 @@ const Appointments = () => {
         {loadB ? (
           <div className="modal-box-appointment">
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         ) : (
@@ -280,7 +280,9 @@ const Appointments = () => {
             <p className="user-name-app">Selected User : {selectedUser.name}</p>
             <p className="user-name-book">
               Selected Book Count :
-              <span style={{ color: "green", fontWeight: "bold" }}>
+              <span
+                style={{ color: "green", fontWeight: "bold", marginLeft: "2%" }}
+              >
                 {aboutToBook.length}
               </span>
             </p>
@@ -459,7 +461,11 @@ const Appointments = () => {
                             style={{ marginTop: 25 }}
                             className="spin-height"
                           >
-                            <TailSpin color={"red"} height={20} width={20} />
+                            <InfinitySpin
+                              color={"red"}
+                              height={20}
+                              width={20}
+                            />
                           </div>
                         ))}
                       {dateTime.date !== "" &&
@@ -480,7 +486,7 @@ const Appointments = () => {
             <button
               style={{
                 color: "#fff",
-                backgroundColor: " #ffc300",
+                backgroundColor: "#4444D5",
                 alignSelf: "flex-start",
                 borderWidth: 0,
                 fontSize: 16,
@@ -561,7 +567,10 @@ const Appointments = () => {
         <ToastContainer />
         <div className="modal-boxcon"></div>
         {lo ? (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <p style={{ fontSize: 20 }}>Are you sure you want to delete ?</p>
             <div
               style={{
@@ -575,7 +584,7 @@ const Appointments = () => {
               <button
                 style={{
                   padding: 5,
-                  backgroundColor: "#ffc720",
+                  backgroundColor: "#4444D5",
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
@@ -603,9 +612,12 @@ const Appointments = () => {
             </div>
           </div>
         ) : (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         )}
@@ -625,91 +637,63 @@ const Appointments = () => {
           + Book an appoinment
         </button>
         <div className="avialable-products-head">
-          <div className="product-image">
+          <div className="product-box7">
             <p className="product-heads">Image</p>
           </div>
 
-          <div className="product-name">
+          <div className="product-box6">
             <p className="product-heads">Name</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box6">
             <p className="product-heads">Price</p>
           </div>
-          <div className="product-category">
+          <div className="product-box3">
             <p className="product-heads">Category</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box3">
             <p className="product-heads">User Name</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box3">
             <p className="product-heads">Date</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box6">
             <p className="product-heads">Time</p>
           </div>
-          <div className="product-action">
+          <div className="product-box6">
             <p className="product-heads">Action</p>
             <img src="./updown.png" className="updown" alt="updown" />
           </div>
         </div>
         {myorders.map((each) => (
           <div key={each._id} id={each._id} className="avialable-products">
-            <div className="product-image">
+            <div className="product-box7">
               <img
                 className="productimage"
                 src={each.photos[0]}
-                alt="productimage"
+                alt="serviceimage"
               />
             </div>
 
-            <div className="product-name">
-              <p
-                style={{
-                  textTransform: "capitalize",
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {each.name}
-              </p>
+            <div className="product-box6">
+              <p>{each.name}</p>
             </div>
-            <div id={each._id} className="product-toggle">
+            <div id={each._id} className="product-box6">
               <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
             </div>
-            <div className="product-category">
-              <p
-                style={{
-                  textTransform: "capitalize",
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {each.category}
-              </p>
+            <div className="product-box3">
+              <p>{each.category}</p>
             </div>
-            <div className="product-toggle">
-              <p style={{ fontWeight: 400 }} className="product-heads">
-                {each.userName}
-              </p>
+            <div className="product-box3">
+              <p>{each.userName}</p>
             </div>
-            <div className="product-toggle">
-              <p style={{ fontWeight: 400 }} className="product-heads">
-                {each.date}
-              </p>
+            <div className="product-box3">
+              <p>{each.date}</p>
             </div>
-            <div className="product-toggle">
-              <p style={{ fontWeight: 400 }} className="product-heads">
-                {each.time}
-              </p>
+            <div className="product-box6">
+              <p>{each.time}</p>
             </div>
 
-            <div className="product-action">
+            <div className="product-box6">
               <div className="actions-con">
                 <button
                   onClick={() => {
@@ -736,7 +720,7 @@ const Appointments = () => {
     </>
   ) : (
     <div className="loader-spinner-admin">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

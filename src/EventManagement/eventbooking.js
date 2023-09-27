@@ -4,7 +4,7 @@ import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -307,7 +307,7 @@ const EventBooking = (props) => {
       {button ? (
         <div className="button-container-booking">
           <div className="proceed-btn" type="submit">
-            <TailSpin
+            <InfinitySpin
               wrapperStyle={{ alignSelf: "center", justifyContent: "center" }}
               color={"white"}
               height={30}

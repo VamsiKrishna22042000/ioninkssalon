@@ -38,12 +38,8 @@ const DashboardContent = (props) => {
     const response = await fetch(url);
     const data = await response.json();
     if (response.ok) {
-      const filterdAdmin = data.users.map(
-        (each) => each._id === Cookies.get("jwt_user") && each.name
-      );
-      const filter = filterdAdmin.filter((each) => each !== false);
-      console.log(filter);
-      setAdmin(filter);
+      console.log(data);
+      setAdmin(Cookies.get("jwt_user").replace("@gmail.com", ""));
     }
   };
 
@@ -54,15 +50,15 @@ const DashboardContent = (props) => {
       <div className="dashboard-header">
         <div className="header-content">
           <p style={{ marginBottom: 0 }}>Hello,</p>
-          <h1 style={{ marginTop: 5, color: "#4e4e4e", fontSize: 20 }}>
+          <h1
+            style={{ marginTop: 5, fontSize: 20, textTransform: "capitalize" }}
+          >
             {admin}
           </h1>
         </div>
         <div className="header-content">
           <p style={{ marginBottom: 0 }}>User</p>
-          <h1 style={{ marginTop: 5, color: "#4e4e4e", fontSize: 20 }}>
-            Administrator
-          </h1>
+          <h1 style={{ marginTop: 5, fontSize: 20 }}>Administrator</h1>
         </div>
       </div>
       {selectedDashboard === "Dashboard" ? (

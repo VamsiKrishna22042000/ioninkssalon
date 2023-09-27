@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -166,11 +166,12 @@ const Banners = () => {
               Add
             </button>
             <button
+              style={{ paddingTop: "3%", paddingBottom: "3%" }}
               className="service-button-admin"
               onClick={settingModal}
               type="button"
             >
-              close
+              Close
             </button>
           </div>
         </form>
@@ -181,7 +182,7 @@ const Banners = () => {
         <div className="modal-boxcon"></div>
         <div className="modal-box3">
           <div className="spinner-edit">
-            <TailSpin color={"#F4BD18"} height={50} width={50} />
+            <InfinitySpin color={"#4444D5"} height={150} width={150} />
           </div>
         </div>
       </>
@@ -223,13 +224,19 @@ const Banners = () => {
         <ToastContainer />
         <div className="modal-boxcon"></div>
         {loadingDelete ? (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         ) : (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <p style={{ fontSize: 20 }}>Are you sure you want to delete ?</p>
             <div
               style={{
@@ -243,7 +250,7 @@ const Banners = () => {
               <button
                 style={{
                   padding: 5,
-                  backgroundColor: "#ffc720",
+                  backgroundColor: "#4444D5",
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
@@ -289,14 +296,14 @@ const Banners = () => {
             <p className="product-heads">Banners</p>
           </div>
 
-          <div className="product-name">
+          <div className="product-box2">
             <p className="product-heads">Category</p>
           </div>
           <div className="product-id">
             <p className="product-heads">Id</p>
             <img src="./updown.png" className="updown" alt="updown" />
           </div>
-          <div className="product-action">
+          <div className="product-box6">
             <p className="product-heads">Action</p>
             <img src="./updown.png" className="updown" alt="updown" />
           </div>
@@ -316,13 +323,13 @@ const Banners = () => {
                 allowfullscreen="true"
               />
             </div>
-            <div className="product-name">
+            <div className="product-box2">
               <p style={{ textTransform: "capitalize" }}>{each.category}</p>
             </div>
             <div className="product-id">
               <p>{each._id}</p>
             </div>
-            <div className="product-action">
+            <div className="product-box6">
               <div className="actions-con">
                 <button
                   onClick={() => {
@@ -345,7 +352,7 @@ const Banners = () => {
     </>
   ) : (
     <div className="loader-spinner-admin">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

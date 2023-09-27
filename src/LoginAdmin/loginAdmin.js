@@ -43,6 +43,9 @@ const LoginAdmin = (props) => {
 
       if (response.ok) {
         Cookies.set("jwt_admin", data.result._id, { expires: 30 });
+        Cookies.set("jwt_user", data.result.email, { expires: 30 });
+        Cookies.set("jwt_token", data.token, { expires: 30 });
+        Cookies.set("jwt_adminId", data.result._id, { expires: 30 });
         history.replace("/admindashboard");
       } else {
         setLoad(false);
@@ -107,7 +110,7 @@ const LoginAdmin = (props) => {
         <ToastContainer />
         <NavBar props={props} />
         <div className="signup-main-con">
-          <div>
+          <div className="imgCon">
             <img
               className="signupimage"
               src="/loginpageimage.jpg"

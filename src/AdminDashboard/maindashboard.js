@@ -2,7 +2,7 @@ import "./index.css";
 
 import { useState, useEffect } from "react";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 const Maindashboard = () => {
   const [dashboarddata, setDashboardData] = useState([]);
@@ -45,45 +45,39 @@ const Maindashboard = () => {
         <div className="dashboard-data-content">
           <div className="dash-board-img-con">
             <img
-              src="/dashboard-appointment.png"
+              src="/dashboard-appointment2.png"
               className="dash-board-data-img"
               alt="dashboard-icons"
             />
           </div>
           <div className="dashboard-data-numbers">
-            <h1 style={{ margin: 0, color: "#4e4e4e" }}>
-              {dashboarddata[1].totalOrders}
-            </h1>
+            <h1>{dashboarddata[1].totalOrders}</h1>
             <p style={{ margin: 0, paddingLeft: 1 }}>Appointments</p>
           </div>
         </div>
         <div className="dashboard-data-content">
           <div className="dash-board-img-con">
             <img
-              src="/dashboard-customers.png"
+              src="/dashboard-customers2.png"
               className="dash-board-data-img"
               alt="dashboard-icons"
             />
           </div>
           <div className="dashboard-data-numbers">
-            <h1 style={{ margin: 0, color: "#4e4e4e" }}>
-              {dashboarddata[0].totalUsers}
-            </h1>
+            <h1>{dashboarddata[0].totalUsers}</h1>
             <p style={{ margin: 0, paddingLeft: 1 }}>Customers</p>
           </div>
         </div>
         <div className="dashboard-data-content">
           <div className="dash-board-img-con">
             <img
-              src="/dashboard-services.png"
+              src="/dashboard-services2.png"
               className="dash-board-data-img"
               alt="dashboard-icons"
             />
           </div>
           <div className="dashboard-data-numbers">
-            <h1 style={{ margin: 0, color: "#4e4e4e" }}>
-              {dashboarddata[6].totalServices}
-            </h1>
+            <h1>{dashboarddata[6].totalServices}</h1>
             <p style={{ margin: 0, paddingLeft: 1 }}>Services</p>
           </div>
         </div>
@@ -136,7 +130,7 @@ const Maindashboard = () => {
     </div>
   ) : (
     <div className="loader-spinner-admin">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import "react-phone-input-2/lib/style.css";
 
 import Cookies from "js-cookie";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 
@@ -302,7 +302,7 @@ const ModalBox = (props) => {
             Did'nt got OTP? click{" "}
             <span
               onClick={resendOTP}
-              style={{ color: "#FFC300", cursor: "pointer" }}
+              style={{ color: "#4444D5", cursor: "pointer" }}
             >
               Resend
             </span>
@@ -314,7 +314,7 @@ const ModalBox = (props) => {
               }}
               type="button"
               style={{
-                backgroundColor: "#FFC300",
+                backgroundColor: "#4444D5",
                 color: "white",
                 borderWidth: 0,
                 alignSelf: "center",
@@ -334,7 +334,7 @@ const ModalBox = (props) => {
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: "#FFC300",
+                backgroundColor: "#4444D5",
                 color: "white",
                 borderWidth: 0,
                 alignSelf: "center",
@@ -346,7 +346,7 @@ const ModalBox = (props) => {
               }}
               type="button"
             >
-              <TailSpin height={20} width={20} color="#FFFFFF" />
+              <InfinitySpin height={20} width={20} color="#FFFFFF" />
             </button>
           )}
         </div>
@@ -413,7 +413,7 @@ const ModalBox = (props) => {
               }}
               type="button"
               style={{
-                backgroundColor: "#FFC300",
+                backgroundColor: "#4444D5",
                 color: "white",
                 borderWidth: 0,
                 alignSelf: "flex-end",
@@ -434,7 +434,7 @@ const ModalBox = (props) => {
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: "#FFC300",
+                backgroundColor: "#4444D5",
                 color: "white",
                 borderWidth: 0,
                 alignSelf: "flex-end",
@@ -446,7 +446,7 @@ const ModalBox = (props) => {
               }}
               type="button"
             >
-              <TailSpin height={20} width={20} color="#FFFFFF" />
+              <InfinitySpin height={20} width={20} color="#FFFFFF" />
             </button>
           )}
 

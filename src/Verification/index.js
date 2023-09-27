@@ -2,7 +2,7 @@ import "./index.css";
 
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { useState } from "react";
 
@@ -241,7 +241,7 @@ const Verification = (props) => {
           className="otp-verify-2"
           type="button"
         >
-          <TailSpin height={20} width={20} color="#FFFFFF" />
+          <InfinitySpin height={20} width={20} color="#FFFFFF" />
         </button>
       )}
     </>

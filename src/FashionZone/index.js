@@ -1,7 +1,7 @@
 import FashionZoneCarousel from "../FashionzoneCarousel";
 import "./index.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import Cookies from "js-cookie";
 
@@ -265,7 +265,7 @@ const FashionZone = (props) => {
         <div className="beautyzone-body-2">
           {categories === "" ? (
             <div className="service-spinner">
-              <TailSpin color={"#F4BD18"} height={70} width={70} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           ) : (
             <>
@@ -333,7 +333,7 @@ const FashionZone = (props) => {
     </>
   ) : (
     <div className="loader-spinner">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

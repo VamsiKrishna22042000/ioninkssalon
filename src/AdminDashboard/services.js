@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -574,6 +574,7 @@ const Services = () => {
                 </div>
                 <div className="service-button-admin-con">
                   <button
+                    style={{ paddingTop: "2%", paddingBottom: "2%" }}
                     onClick={updatingServices}
                     className="service-button-admin"
                     type="button"
@@ -581,11 +582,7 @@ const Services = () => {
                     Add
                   </button>
                   <button
-                    style={{
-                      paddingTop: "1%",
-                      paddingBottom: "3%",
-                      color: "white",
-                    }}
+                    style={{ paddingTop: "2%", paddingBottom: "2%" }}
                     className="service-button-admin"
                     onClick={settingModal}
                     type="button"
@@ -593,7 +590,11 @@ const Services = () => {
                     Close
                   </button>
                   <button
-                    style={{ bottom: "-50%" }}
+                    style={{
+                      bottom: "-50%",
+                      borderRadius: ".3rem",
+                      width: "5rem",
+                    }}
                     className="service-button-admin-faq"
                     onClick={() => {
                       setfaq(!showfaq);
@@ -618,10 +619,11 @@ const Services = () => {
                 onClick={settingModal}
                 type="button"
               >
-                close
+                Close
               </button>
               <button
                 className="service-button-admin-faq"
+                style={{ borderRadius: ".3rem", width: "5rem" }}
                 onClick={() => {
                   setfaq(!showfaq);
                 }}
@@ -662,7 +664,7 @@ const Services = () => {
         ) : (
           <div className="modal-box-service-con">
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={70} width={70} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         )}
@@ -707,7 +709,10 @@ const Services = () => {
         <ToastContainer />
         <div className="modal-boxcon"></div>
         {loading ? (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <p style={{ fontSize: 20 }}>Are you sure you want to delete ?</p>
             <div
               style={{
@@ -721,7 +726,7 @@ const Services = () => {
               <button
                 style={{
                   padding: 5,
-                  backgroundColor: "#ffc720",
+                  backgroundColor: "#4444D5",
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
@@ -750,9 +755,12 @@ const Services = () => {
             </div>
           </div>
         ) : (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         )}
@@ -790,50 +798,52 @@ const Services = () => {
           + Add new service
         </button>
         <div className="avialable-products-head">
-          <div className="product-image">
+          <div className="product-box7">
             <p className="product-heads">Image</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box8">
             <p className="product-heads">Enable/Disable</p>
           </div>
-          <div className="product-name">
+          <div className="product-box7">
             <p className="product-heads">Name</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box7">
             <p className="product-heads">Price</p>
           </div>
-          <div className="product-category">
+          <div className="product-box7">
             <p className="product-heads">Category</p>
           </div>
-          <div className="product-image">
+          <div className="product-box7">
             <p className="product-heads">Time</p>
           </div>
-          <div className="product-action">
+          <div className="product-box7">
             <p className="product-heads">Rating</p>
           </div>
-          <div className="product-image">
+          <div className="product-box7">
             <p className="product-heads">Reviews</p>
           </div>
-          <div className="product-checkbox1">
+          <div className="product-box7">
             <p className="product-heads">Slots</p>
           </div>
-          <div className="product-action">
+          <div className="product-box7">
             <p className="product-heads">Action</p>
             <img src="./updown.png" className="updown" alt="updown" />
           </div>
         </div>
         {availableServices.map((each) => (
           <div key={each._id} id={each._id} className="avialable-products">
-            <div className="product-image">
+            <div className="product-box7">
               <img
                 className="productimage"
                 src={each.image[0]}
                 alt="serviceimage"
               />
             </div>
-            <div id={each._id} className="product-toggle">
+            <div id={each._id} className="product-box8">
               {each._id === toggleUser ? (
-                <TailSpin color={"#F4BD18"} height={50} width={50} />
+                <div>
+                  <InfinitySpin color={"#4444D5"} height={60} width={60} />
+                </div>
               ) : (
                 <div className={each.active ? "toggle-con3" : "toggle-con4"}>
                   <button
@@ -845,51 +855,28 @@ const Services = () => {
                 </div>
               )}
             </div>
-            <div className="product-name">
-              <p
-                style={{
-                  textTransform: "capitalize",
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {each.service}
-              </p>
+            <div className="product-box7">
+              <p>{each.service}</p>
             </div>
-            <div id={each._id} className="product-toggle">
+            <div id={each._id} className="product-box7">
               <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
             </div>
-            <div className="product-category">
-              <p
-                style={{
-                  textTransform: "capitalize",
-                  textTransform: "capitalize",
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {each.category}
-              </p>
+            <div className="product-box7">
+              <p>{each.category}</p>
             </div>
-            <div className="product-image">
-              <p className="product-heads">{each.time} min</p>
+            <div className="product-box7">
+              <p>{each.time} min</p>
             </div>
-            <div className="product-action">
-              <p className="product-heads">{each.rating}</p>
+            <div className="product-box7">
+              <p>{each.rating}</p>
             </div>
-            <div className="product-image">
-              <p className="product-heads">{each.reviews.length}</p>
+            <div className="product-box7">
+              <p>{each.reviews.length}</p>
             </div>
-            <div className="product-checkbox1">
-              <p className="product-heads">{each.availableSlotCount}</p>
+            <div className="product-box7">
+              <p>{each.availableSlotCount}</p>
             </div>
-            <div className="product-action">
+            <div className="product-box7">
               <div className="actions-con">
                 <button
                   onClick={() => {
@@ -939,7 +926,7 @@ const Services = () => {
     </>
   ) : (
     <div className="loader-spinner-admin">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

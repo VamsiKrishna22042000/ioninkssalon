@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import Mode from "./modalboxofproduct.js";
 
@@ -56,7 +56,10 @@ const Products = () => {
         <ToastContainer />
         <div className="modal-boxcon"></div>
         {loading ? (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <p style={{ fontSize: 20 }}>Are you sure you want to delete ?</p>
             <div
               style={{
@@ -70,7 +73,7 @@ const Products = () => {
               <button
                 style={{
                   padding: 5,
-                  backgroundColor: "#ffc720",
+                  backgroundColor: "#4444D5",
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
@@ -98,9 +101,12 @@ const Products = () => {
             </div>
           </div>
         ) : (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         )}
@@ -233,7 +239,7 @@ const Products = () => {
         {settigEditLoad ? (
           <div className="modal-box">
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={70} width={70} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         ) : (
@@ -392,47 +398,47 @@ const Products = () => {
           + Add new product
         </button>
         <div className="avialable-products-head">
-          <div className="product-image">
+          <div className="product-box">
             <p className="product-heads">Image</p>
           </div>
-          <div className="product-togglecon">
+          <div className="product-box2con">
             <p className="product-heads">Enable/Disable</p>
           </div>
-          <div className="product-name">
+          <div className="product-box2">
             <p className="product-heads">Name</p>
           </div>
-          <div className="product-toggle">
+          <div className="product-box2">
             <p className="product-heads">Price</p>
           </div>
-          <div className="product-togglecon">
+          <div className="product-box2con">
             <p className="product-heads">Type</p>
           </div>
-          <div className="product-category">
+          <div className="product-box5">
             <p className="product-heads">Category</p>
           </div>
-          <div className="product-togglecon">
+          <div className="product-box2con">
             <p className="product-heads">Rating</p>
           </div>
-          <div className="product-togglecon">
+          <div className="product-box2con">
             <p className="product-heads">Reviews</p>
           </div>
-          <div className="product-action">
+          <div className="product-box6">
             <p className="product-heads">Action</p>
             <img src="./updown.png" className="updown" alt="updown" />
           </div>
         </div>
         {productsAvailable.map((each) => (
           <div key={each._id} id={each._id} className="avialable-products">
-            <div className="product-image">
+            <div className="product-box">
               <img
                 className="productimage"
                 src={each.photos[0]}
                 alt="productimage"
               />
             </div>
-            <div id={each._id} className="product-togglecon">
+            <div id={each._id} className="product-box2con">
               {buttonToggle === each._id ? (
-                <TailSpin color={"#F4BD18"} height={50} width={50} />
+                <InfinitySpin color={"#4444D5"} height={150} width={150} />
               ) : (
                 <div className={each.active ? "toggle-con3" : "toggle-con4"}>
                   <button
@@ -444,7 +450,7 @@ const Products = () => {
                 </div>
               )}
             </div>
-            <div className="product-name">
+            <div className="product-box2">
               <p
                 style={{
                   textTransform: "capitalize",
@@ -460,10 +466,10 @@ const Products = () => {
                 {each.name}
               </p>
             </div>
-            <div id={each._id} className="product-toggle">
+            <div id={each._id} className="product-box2">
               <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
             </div>
-            <div className="product-togglecon">
+            <div className="product-box2con">
               <p
                 style={{
                   textTransform: "capitalize",
@@ -481,23 +487,10 @@ const Products = () => {
                 {each.type}
               </p>
             </div>
-            <div className="product-category">
-              <p
-                style={{
-                  textTransform: "capitalize",
-                  textTransform: "capitalize",
-
-                  display: "-webkit-box",
-                  WebkitLineClamp: 3,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {each.category}
-              </p>
+            <div className="product-box5">
+              <p>{each.category}</p>
             </div>
-            <div className="product-togglecon">
+            <div className="product-box2con">
               <p
                 style={{ textTransform: "capitalize", fontWeight: 400 }}
                 className="product-heads"
@@ -505,7 +498,7 @@ const Products = () => {
                 {each.rating}
               </p>
             </div>
-            <div className="product-togglecon">
+            <div className="product-box2con">
               <p
                 style={{ textTransform: "capitalize", fontWeight: 400 }}
                 className="product-heads"
@@ -513,7 +506,7 @@ const Products = () => {
                 {each.productReviews.length}
               </p>
             </div>
-            <div className="product-action">
+            <div className="product-box6">
               <div className="actions-con">
                 <button
                   onClick={() => {
@@ -545,7 +538,7 @@ const Products = () => {
     </>
   ) : (
     <div className="loader-spinner-admin">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

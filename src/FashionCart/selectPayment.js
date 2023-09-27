@@ -2,7 +2,7 @@ import "./index.css";
 
 import { withRouter } from "react-router-dom";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -147,7 +147,7 @@ const SelectPayment = (props) => {
           <button
             style={{
               alignSelf: "flex-end",
-              backgroundColor: "#f4bd18",
+              backgroundColor: "#4444D5",
               color: "white",
               borderWidth: 0,
               padding: 5,
@@ -180,7 +180,7 @@ const SelectPayment = (props) => {
           <button
             style={{
               alignSelf: "flex-end",
-              backgroundColor: "#f4bd18",
+              backgroundColor: "#4444D5",
               color: "white",
               borderWidth: 0,
               padding: 5,
@@ -227,7 +227,7 @@ const SelectPayment = (props) => {
       </div>
       {button ? (
         <div className="fashion-proceed-to-schedule">
-          <TailSpin
+          <InfinitySpin
             wrapperStyle={{ alignSelf: "center", justifyContent: "center" }}
             color={"white"}
             height={23}

@@ -4,7 +4,7 @@ import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 const CartItemsFashion = (props) => {
   const [load, setLoad] = useState(true);
@@ -103,7 +103,7 @@ const CartItemsFashion = (props) => {
                 {load ? (
                   each.count
                 ) : (
-                  <TailSpin color={"#F4BD18"} height={13} width={13} />
+                  <InfinitySpin color={"#4444D5"} height={13} width={13} />
                 )}
               </p>
               <button

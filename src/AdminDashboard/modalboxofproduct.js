@@ -2,7 +2,7 @@ import "./index.css";
 
 import { useEffect, useState } from "react";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -197,7 +197,7 @@ const Mode = (props) => {
       <div className="modal-boxcon"></div>
       <div className="modal-box">
         <div className="spinner-edit">
-          <TailSpin color={"#F4BD18"} height={50} width={50} />
+          <InfinitySpin color={"#4444D5"} height={150} width={150} />
         </div>
       </div>
     </>

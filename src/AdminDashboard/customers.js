@@ -2,7 +2,7 @@ import "./index.js";
 
 import { useState, useEffect } from "react";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -104,7 +104,7 @@ const Customers = () => {
         {addCustomerLoad ? (
           <div style={{ height: 250, width: 410 }} className="modal-Customer">
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         ) : (
@@ -172,7 +172,7 @@ const Customers = () => {
                 className="service-button-admin"
                 type="button"
               >
-                close
+                Close
               </button>
             </div>
           </form>
@@ -263,7 +263,7 @@ const Customers = () => {
         {modalLoad ? (
           <div style={{ height: 250, width: 410 }} className="modal-Customer">
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         ) : (
@@ -335,7 +335,7 @@ const Customers = () => {
                 className="service-button-admin"
                 type="button"
               >
-                close
+                Close
               </button>
             </div>
           </form>
@@ -379,14 +379,22 @@ const Customers = () => {
         <ToastContainer />
         <div className="modal-boxcon"></div>
         {loadingDelete ? (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         ) : (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
-            <p style={{ fontSize: 20 }}>Are you sure you want to delete ?</p>
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
+            <p style={{ fontSize: "1.5rem" }}>
+              Are you sure you want to delete ?
+            </p>
             <div
               style={{
                 width: 200,
@@ -394,12 +402,13 @@ const Customers = () => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignSelf: "center",
+                marginTop: "2rem",
               }}
             >
               <button
                 style={{
                   padding: 5,
-                  backgroundColor: "#ffc720",
+                  backgroundColor: "#4444D5",
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
@@ -458,30 +467,30 @@ const Customers = () => {
             + Add Customer
           </button>
           <div className="avialable-products-head">
-            <div className="product-image">
+            <div className="product-box">
               <p className="product-heads"></p>
             </div>
-            <div className="product-name">
+            <div className="product-box2">
               <p className="product-heads">Name</p>
             </div>
-            <div className="user-Number">
+            <div className="product-box3">
               <p className="product-heads">Mobile Number</p>
             </div>
-            <div className="user-email">
+            <div className="product-box4">
               <p className="product-heads">Email</p>
             </div>
 
-            <div className="user-Id">
+            <div className="product-box5">
               <p className="product-heads">Address</p>
             </div>
-            <div className="product-action">
+            <div className="product-box6">
               <p className="product-heads">Action</p>
               <img src="./updown.png" className="updown" alt="updown" />
             </div>
           </div>
           {customerData.map((each) => (
             <div className="avialable-products-head">
-              <div className="product-image">
+              <div className="product-box">
                 <img
                   style={{ height: 20, width: 22 }}
                   className="productimage"
@@ -489,44 +498,20 @@ const Customers = () => {
                   alt="serviceimage"
                 />
               </div>
-              <div className="product-name">
-                <p
-                  style={{ fontWeight: 400, color: "#000000" }}
-                  className="product-heads"
-                >
-                  {each.name}
-                </p>
+              <div className="product-box2">
+                <p>{each.name}</p>
               </div>
-              <div className="user-Number">
-                <p
-                  style={{ fontWeight: 400, color: "#000000" }}
-                  className="product-heads"
-                >
-                  {each.mobileNumber}
-                </p>
+              <div className="product-box3">
+                <p>{each.mobileNumber}</p>
               </div>
-              <div className="user-email">
-                <p
-                  style={{ fontWeight: 400, color: "#000000" }}
-                  className="product-heads"
-                >
-                  {each.email}
-                </p>
+              <div className="product-box4">
+                <p>{each.email}</p>
               </div>
 
-              <div className="user-Id">
-                <p
-                  style={{
-                    fontWeight: 400,
-                    color: "#000000",
-                    textAlign: "center",
-                  }}
-                  className="product-heads"
-                >
-                  {each.address}
-                </p>
+              <div className="product-box5">
+                <p>{each.address}</p>
               </div>
-              <div className="product-action">
+              <div className="product-box6">
                 <div className="actions-con">
                   <button
                     onClick={() => {
@@ -561,7 +546,7 @@ const Customers = () => {
         </div>
       ) : (
         <div className="loader-spinner-admin">
-          <TailSpin color={"#F4BD18"} height={70} width={70} />
+          <InfinitySpin color={"#4444D5"} height={150} width={150} />
         </div>
       )}
       {editCustomer !== "" && <ModalEditCustomer />}

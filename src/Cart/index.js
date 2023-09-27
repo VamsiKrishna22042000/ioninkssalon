@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import CartItems from "../CartItems";
 
@@ -131,7 +131,7 @@ const Cart = (props) => {
   /*console.log(cartItemsArr)*/
   return loading === pageStage.loading ? (
     <div className="loader-spinner">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   ) : cartItemsArr.length !== 0 ? (
     <div className="Cart-total-con">

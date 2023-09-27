@@ -9,7 +9,7 @@ import { withRouter, Link } from "react-router-dom";
 
 import { BsBorderStyle, BsHandbag } from "react-icons/bs";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import "./index.css";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
@@ -130,7 +130,7 @@ const SelectedService = (props) => {
 
   return loading === pageStage.loading ? (
     <div className="loader-spinner">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   ) : (
     <div className="selected-category-con">

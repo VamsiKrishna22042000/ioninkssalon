@@ -1,6 +1,6 @@
 import "./index.js";
 
-import { TailSpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -142,7 +142,7 @@ const Events = () => {
         <div className="modal-boxcon"></div>
         <div className="modal-box3">
           <div className="spinner-edit">
-            <TailSpin color={"#F4BD18"} height={50} width={50} />
+            <InfinitySpin color={"#4444D5"} height={150} width={150} />
           </div>
         </div>
       </>
@@ -184,13 +184,19 @@ const Events = () => {
         <ToastContainer />
         <div className="modal-boxcon"></div>
         {loadingDelete ? (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <div className="spinner-edit">
-              <TailSpin color={"#F4BD18"} height={50} width={50} />
+              <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
         ) : (
-          <div style={{ width: 250, height: 100 }} className="modal-delete">
+          <div
+            style={{ width: "20rem", height: "10rem" }}
+            className="modal-delete"
+          >
             <p style={{ fontSize: 20 }}>Are you sure you want to delete ?</p>
             <div
               style={{
@@ -204,7 +210,7 @@ const Events = () => {
               <button
                 style={{
                   padding: 5,
-                  backgroundColor: "#ffc720",
+                  backgroundColor: "#4444D5",
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
@@ -246,25 +252,25 @@ const Events = () => {
           + Add new Event
         </button>
         <div className="avialable-products-head">
-          <div className="product-image">
+          <div className="product-box">
             <p className="product-heads">Image</p>
           </div>
 
-          <div className="product-name">
+          <div className="product-box2">
             <p className="product-heads">Name</p>
           </div>
           <div className="product-id">
             <p className="product-heads">Id</p>
             <img src="./updown.png" className="updown" alt="updown" />
           </div>
-          <div className="product-action">
+          <div className="product-box6">
             <p className="product-heads">Action</p>
             <img src="./updown.png" className="updown" alt="updown" />
           </div>
         </div>
         {eventServices.map((each) => (
           <div key={each._id} id={each._id} className="avialable-products">
-            <div className="product-image">
+            <div className="product-box">
               <img
                 className="productimage"
                 src={each.image}
@@ -272,7 +278,7 @@ const Events = () => {
               />
             </div>
 
-            <div className="product-name">
+            <div className="product-box2">
               <p
                 style={{
                   textTransform: "capitalize",
@@ -291,7 +297,7 @@ const Events = () => {
             <div className="product-id">
               <p>{each._id}</p>
             </div>
-            <div className="product-action">
+            <div className="product-box6">
               <div className="actions-con">
                 <button
                   onClick={() => {
@@ -314,7 +320,7 @@ const Events = () => {
     </>
   ) : (
     <div className="loader-spinner-admin">
-      <TailSpin color={"#F4BD18"} height={70} width={70} />
+      <InfinitySpin color={"#4444D5"} height={150} width={150} />
     </div>
   );
 };

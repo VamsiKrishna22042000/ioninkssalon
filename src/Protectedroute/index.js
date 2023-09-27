@@ -31,7 +31,7 @@ const ProtectedRoute = (props) => {
   const userCookie = Cookies.get("jwt_user");
 
   if (obtainedCookie === undefined || userCookie === undefined) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/loginadmin" />;
   }
 
   if (props.location.pathname === "/admindashboard") {
