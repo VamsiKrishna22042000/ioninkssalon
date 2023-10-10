@@ -44,7 +44,7 @@
 .modal-box {
   position: fixed;
   height: 75vh;
-  width: 45vw;
+  width: 48vw;
   top: 9%;
   left: 28%;
   background-color: #fff;
@@ -435,7 +435,10 @@
   margin-left: 10%;
   margin-right: 5%;
   padding: 5%;
-  border-radius: 35%;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dash-board-data-img {
   height: 5vh;
@@ -726,6 +729,24 @@
   cursor: pointer;
 }
 
+.product-box9 {
+  position: relative;
+  width: 11%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1%;
+  font-size: 0.9rem;
+  color: #3e3e3e;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  padding-left: 1.7rem;
+}
+
 .updown {
   height: 15px;
   width: 10px;
@@ -749,7 +770,7 @@
 }
 .toggle-con4 {
   height: 35%;
-  width: 40%;
+  width: 50%;
   border-radius: 30px;
   background-color: #dfdfdf;
   display: flex;
@@ -757,7 +778,6 @@
   align-items: center;
   transition: all 1.5s ease-in-out;
   justify-self: center;
-  margin-left: 1.7rem;
 }
 .toggle-con2 {
   height: 30%;
@@ -771,14 +791,13 @@
 }
 .toggle-con3 {
   height: 35%;
-  width: 40%;
+  width: 50%;
   border-radius: 30px;
   background-color: #8ae07b;
   display: flex;
   flex-direction: row;
   align-items: center;
   transition: all 1.5s ease-in-out;
-  margin-left: 1.7rem;
 }
 .togglebutton1 {
   height: 100%;

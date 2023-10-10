@@ -19,6 +19,8 @@ import Banners from "./banners.js";
 
 import Videos from "./videos.js";
 
+import Staff from "./staff.js";
+
 import CategoryEdit from "./categoryedit.js";
 
 import { useState, useEffect } from "react";
@@ -34,7 +36,9 @@ const DashboardContent = (props) => {
   }, []);
 
   const getCustomerData = async () => {
-    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getAllUsers`;
+    const adminId = Cookies.get("jwt_adminId");
+
+    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getUsersByAdminId/${adminId}`;
     const response = await fetch(url);
     const data = await response.json();
     if (response.ok) {
@@ -81,6 +85,8 @@ const DashboardContent = (props) => {
         <Banners />
       ) : selectedDashboard === "Videos" ? (
         <Videos />
+      ) : selectedDashboard === "Staff" ? (
+        <Staff />
       ) : (
         <CategoryEdit />
       )}

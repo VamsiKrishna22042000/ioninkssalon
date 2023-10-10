@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
 @keyframes show-navbar {
   0% {
     transform: translateX(-500px);
@@ -9,6 +11,14 @@
     transform: translateX(0);
     z-index: 1;
   }
+}
+
+body {
+  height: 100vh;
+  background-color: rgba(black, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 * {
@@ -240,6 +250,359 @@
 
 /**Main-page-brands*/
 
+.saloninks-home-con h4 {
+  font-family: "Instrument Sans", sans-serif;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.brand-con {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.brands {
+  height: 57%;
+  width: 10.5%;
+  filter: drop-shadow(1px 1px 4px grey);
+  cursor: pointer;
+}
+
+.brands:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+  filter: drop-shadow(0px 0px 0px white);
+}
+
+.brands img {
+  height: 100%;
+  width: 100%;
+}
+
+.con-comprehensive {
+  height: auto;
+  width: 100%;
+  background-color: #6f58b4;
+  font-family: "Instrument Sans", sans-serif;
+  color: #fff;
+  padding-top: 5%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  overflow: hidden;
+}
+
+.con-comprehensive h1 {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.con-comprehensive p {
+  margin-top: 2%;
+  text-align: center;
+  font-size: 0.85rem;
+  max-width: 45%;
+  padding-bottom: 5%;
+  line-height: 1.3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+.con-comprehensive img {
+  height: 60%;
+  width: 60%;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 20px #000000;
+  margin-bottom: 5%;
+  object-fit: cover;
+}
+
+.comprehensive-content {
+  height: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  color: #fff;
+  padding-bottom: 11%;
+}
+
+.content-com {
+  margin-left: 2rem;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: auto;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.comprehensive-head {
+  font-family: "Robot", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.comprehensive-para {
+  font-family: "Robot", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  font-weight: 100;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.content-com button {
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.2rem;
+  border-width: 0;
+  cursor: pointer;
+  color: #222222;
+  position: absolute;
+  bottom: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.content-com button :hover {
+  color: #5856d6;
+}
+
+/**wave animation*/
+
+.wave {
+  position: absolute;
+  top: -2%;
+  transform: rotate(-180deg);
+}
+
+.wave2 {
+  position: absolute;
+  bottom: 0%;
+}
+
+.wave-3 {
+  position: absolute;
+  top: -2%;
+  transform: rotate(-180deg);
+}
+
+.wave-4 {
+  position: absolute;
+  bottom: 0%;
+}
+
+/**mission-statement*/
+
+.mission-statement {
+  height: auto;
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-family: "Instrument Sans", sans-serif;
+  color: #666c8b;
+  line-height: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 0;
+}
+
+.mission-statement h3 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 3%;
+  color: #222222;
+  align-self: flex-start;
+}
+
+.mission-statement img {
+  width: 100%;
+  margin-top: 8%;
+}
+
+/**our team css*/
+
+.ourTeam {
+  height: auto;
+  width: 100%;
+  background-color: #dfe5f9;
+  margin-top: 7%;
+  position: relative;
+  padding-bottom: 5%;
+  overflow: hidden;
+}
+
+.ourTeam h3 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2.5%;
+  padding-top: 10%;
+  padding-left: 8%;
+}
+
+.ourTeam p {
+  font-family: "Instrument Sans", sans-serif;
+  max-width: 45%;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  padding-bottom: 2.5%;
+  padding-left: 8%;
+}
+
+/**slider css*/
+
+.slider-con {
+  height: 85vh;
+  margin-left: 8%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.slider-div {
+  height: 75vh;
+  width: 40vw;
+  position: relative;
+  border-radius: 1rem;
+  padding-bottom: 15%;
+}
+.slider-div img {
+  height: 100%;
+  width: 80%;
+  border-radius: 1rem;
+  transform: translate(17.5%);
+}
+
+.slider-content {
+  position: absolute;
+  height: 40%;
+  bottom: 0;
+  width: 80%;
+  border-radius: 1rem;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background: rgba(1, 1, 1, 0.438);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transform: translateX(17.5%);
+  margin-bottom: 15%;
+}
+
+.slider-content strong {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding-left: 8%;
+  color: #fff;
+}
+
+.slider-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  max-width: 85%;
+  margin-top: 5%;
+  color: #fff;
+}
+
+.slick-dots {
+  height: 15%;
+  display: inline-block; /* Ensure dots are displayed */
+}
+
+.slide-show1 {
+  display: inline !important;
+}
+
+.slide-show2 {
+  display: none !important;
+}
+
+.securebooking {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 3%;
+}
+
+.securebooking h3 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 3rem;
+  max-width: 60%;
+  padding-left: 10%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #2b8b94, #2b8b94);
+  font-weight: bolder;
+}
+
+.securebooking p {
+  margin-top: 5%;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.2rem;
+  max-width: 70%;
+  padding-left: 10%;
+  color: #666c8b;
+}
+
+.securebooking button {
+  font-size: 1rem;
+  padding: 2% 3%;
+  border-radius: 0.5rem;
+  border-width: 0;
+  margin-top: 5%;
+  margin-left: 10%;
+  color: #fff;
+  background-image: linear-gradient(to right, #865ce0, #2b8b94);
+}
+
+.secure-2 {
+  width: 30%;
+  position: relative;
+  margin-right: 5%;
+}
+
+.secure-img {
+  margin-top: 10%;
+  width: 25vw;
+  z-index: 5;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 30%;
+}
+
+.blob {
+  bottom: -20%;
+  left: -20%;
+  position: absolute;
+  z-index: -5;
+  height: 85%;
+}
+
 @media screen and (max-width: 600px) {
   .saloninks-home-con {
     height: 100vh;
@@ -444,6 +807,241 @@
   }
   .salonink-head-page-button-con {
     width: 100%;
+  }
+
+  /**brands css*/
+
+  .brand-con {
+    height: auto;
+    gap: 1rem;
+  }
+
+  .brands {
+    height: 7.5rem;
+    width: 8rem;
+    margin-top: 1.5rem;
+    filter: drop-shadow(1px 1px 3px grey);
+  }
+
+  .saloninks-home-con h4 {
+    font-size: 1.5rem;
+    margin: 1rem 3rem;
+  }
+
+  /**Comprehensiv-con css*/
+  .con-comprehensive {
+    border-color: #fff;
+  }
+
+  .con-comprehensive h1 {
+    margin-top: 25%;
+    text-align: center;
+    font-size: 1.5rem;
+    max-width: 80%;
+    margin-bottom: 5%;
+    line-height: 2rem;
+  }
+
+  .con-comprehensive p {
+    max-width: 80%;
+    line-height: 1.5rem;
+  }
+
+  .con-comprehensive img {
+    margin-top: 8%;
+    width: 85%;
+    border-radius: 0.5rem;
+  }
+
+  .comprehensive-content {
+    flex-direction: column;
+    margin-bottom: 25%;
+  }
+
+  .content-com {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    top: -1%;
+  }
+
+  /**wave-css*/
+
+  .wave {
+    height: 10%;
+    z-index: 0;
+    top: -2%;
+  }
+
+  .wave2 {
+    height: 10%;
+    z-index: 0;
+    bottom: -2%;
+  }
+
+  .wave-3 {
+    position: absolute;
+    top: -6%;
+    transform: rotate(-180deg);
+  }
+
+  .wave-4 {
+    position: absolute;
+    bottom: -5%;
+  }
+
+  /** mission-statement*/
+
+  .mission-statement {
+    padding: 10%;
+  }
+
+  .mission-statement img {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .mission-statement h3 {
+    line-height: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 10%;
+  }
+
+  .mission-statement p {
+    font-size: 0.9rem;
+  }
+
+  /**Our Team Css*/
+
+  .ourTeam h3 {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 2rem;
+    margin-top: 10%;
+    margin-bottom: 2.5%;
+    padding-top: 10%;
+    padding-left: 8%;
+  }
+
+  .ourTeam p {
+    font-family: "Instrument Sans", sans-serif;
+    max-width: 95%;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    padding-bottom: 2.5%;
+    padding-left: 8%;
+    margin-bottom: 5%;
+  }
+
+  /**slider css*/
+
+  .slider-con {
+    height: 55vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .slide-show2 {
+    display: inline !important;
+  }
+
+  .slide-show1 {
+    display: none !important;
+  }
+
+  .slider-div {
+    height: 55vh;
+    width: 40vw;
+    position: relative;
+    border-radius: 1rem;
+    padding-bottom: 15%;
+  }
+  .slider-div img {
+    height: 100%;
+    width: 80%;
+    border-radius: 1rem;
+    transform: translate(5%);
+  }
+
+  .slider-content {
+    position: absolute;
+    height: 45%;
+    bottom: 0;
+    width: 80%;
+    border-radius: 1rem;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    background: rgba(1, 1, 1, 0.438);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    margin-bottom: 15%;
+    transform: translate(5%);
+  }
+
+  .slider-content strong {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    padding-left: 8%;
+    color: #fff;
+  }
+
+  .slider-content p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    margin-top: 5%;
+    color: #fff;
+  }
+
+  .slick-dots {
+    height: 15%;
+    transform: translate(-5%);
+    display: inline-block; /* Ensure dots are displayed */
+  }
+
+  .securebooking {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3%;
+  }
+
+  .securebooking h3 {
+    margin-top: 15%;
+    max-width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 10%;
+  }
+
+  .securebooking p {
+    max-width: 93%;
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+  }
+
+  .secure-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .secure-img {
+    width: 55vw;
+    z-index: 1;
+  }
+
+  .blob {
+    left: 12%;
+    width: 75vw;
   }
 }
 
@@ -655,6 +1253,168 @@
   .salonink-head-page-button-con button:nth-child(even) {
     font-size: 1.5rem;
     border-radius: 0.5rem;
+  }
+
+  /**brands.css*/
+
+  .saloninks-home-con h4 {
+    margin: 5% 0%;
+  }
+
+  .brand-con {
+    gap: 2rem;
+  }
+
+  .brands {
+    height: 40%;
+    width: 17%;
+  }
+
+  /**Comprehensiv-con css*/
+  .con-comprehensive {
+    border-color: #fff;
+  }
+
+  .con-comprehensive h1 {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 3rem;
+    max-width: 80%;
+    margin-bottom: 2%;
+    line-height: 3.5rem;
+  }
+
+  .con-comprehensive p {
+    max-width: 80%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .con-comprehensive img {
+    margin-top: 5%;
+    width: 85%;
+    border-radius: 0.5rem;
+  }
+
+  .comprehensive-content {
+    flex-direction: column;
+    margin-bottom: 8%;
+  }
+
+  .content-com {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    top: -1%;
+  }
+
+  /**wave-css*/
+
+  .wave {
+    height: 10%;
+    z-index: 0;
+    top: -2%;
+  }
+
+  .wave2 {
+    height: 10%;
+    z-index: 0;
+    bottom: -2%;
+  }
+
+  /** mission-statement*/
+
+  .mission-statement {
+    padding: 10%;
+  }
+
+  .mission-statement img {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .mission-statement h3 {
+    line-height: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 5%;
+  }
+
+  .mission-statement p {
+    font-size: 0.9rem;
+  }
+
+  .ourTeam h3 {
+    font-size: 3rem;
+    margin-top: 5%;
+  }
+
+  .ourTeam p {
+    max-width: 95%;
+    font-size: 0.5rem;
+    margin-bottom: 2.5%;
+  }
+  /**slider-css*/
+
+  .slider-content {
+    height: 40%;
+    padding-top: 2.5%;
+  }
+
+  .slider-content strong {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.7rem;
+    padding-left: 8%;
+    color: #fff;
+  }
+
+  .slider-content p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    max-width: 95%;
+    margin-top: 2.5%;
+    color: #fff;
+  }
+
+  .securebooking {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3%;
+  }
+
+  .securebooking h3 {
+    margin-top: 15%;
+    max-width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 10%;
+  }
+
+  .securebooking p {
+    max-width: 93%;
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+  }
+
+  .secure-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .secure-img {
+    width: 55vw;
+    z-index: 1;
+  }
+
+  .blob {
+    left: 12%;
+    width: 75vw;
   }
 }
 
@@ -872,5 +1632,220 @@
   .salonink-head-page-button-con button:nth-child(odd) {
     font-size: 0.7rem;
     padding: 1% 2%;
+  }
+
+  /**brands*/
+
+  .saloninks-head-page h4 {
+    margin: 1% 0%;
+    font-size: 5rem;
+  }
+
+  .brand-con {
+    gap: 1rem;
+  }
+
+  .brands {
+    height: 65%;
+    width: 10%;
+  }
+
+  .saloninks-home-con h4 {
+    font-family: "Instrument Sans", sans-serif;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+
+  /**Comprehensiv-con css*/
+  .con-comprehensive {
+    border-color: #fff;
+  }
+
+  .con-comprehensive h1 {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 1.5rem;
+    max-width: 80%;
+    margin-bottom: 2%;
+    line-height: 1rem;
+  }
+
+  .con-comprehensive p {
+    max-width: 80%;
+    line-height: 1.5rem;
+  }
+
+  .con-comprehensive img {
+    margin-top: 5%;
+    width: 85%;
+    border-radius: 0.5rem;
+  }
+
+  .comprehensive-content {
+    flex-direction: column;
+    margin-bottom: 8%;
+  }
+
+  .content-com {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    top: -1%;
+  }
+
+  /**wave-css*/
+
+  .wave {
+    height: 10%;
+    z-index: 0;
+    top: -2%;
+  }
+
+  .wave2 {
+    height: 10%;
+    z-index: 0;
+    bottom: -2%;
+  }
+
+  /** mission-statement*/
+
+  .mission-statement {
+    padding: 10%;
+  }
+
+  .mission-statement img {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .mission-statement h3 {
+    line-height: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 5%;
+  }
+
+  .mission-statement p {
+    font-size: 0.9rem;
+  }
+
+  .ourTeam p {
+    font-size: 1.5rem;
+  }
+
+  .slider-con {
+    height: 85vh;
+    margin-left: 8%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .slider-div {
+    height: 75vh;
+    width: 40vw;
+    position: relative;
+    border-radius: 1rem;
+    padding-bottom: 15%;
+  }
+  .slider-div img {
+    height: 100%;
+    width: 80%;
+    border-radius: 1rem;
+    transform: translate(17.5%);
+  }
+
+  .slider-content {
+    padding-top: 2.5%;
+  }
+
+  .slider-content p {
+    font-size: 0.5rem;
+    max-width: 95%;
+    margin-top: 2.5%;
+  }
+
+  .slick-dots {
+    height: 15%;
+    display: inline-block; /* Ensure dots are displayed */
+  }
+}
+
+@media screen and (min-height: 992px) and (max-width: 1000px) and (orientation: portrait) {
+  .ourTeam p {
+    font-size: 1.5rem;
+  }
+
+  .slider-div {
+    height: 70vh;
+    margin-top: 10%;
+  }
+  .slider-div img {
+    width: 85%;
+    transform: translate(0%);
+  }
+
+  .slider-content {
+    width: 85%;
+    transform: translateX(0%);
+    padding-top: 3.5%;
+  }
+
+  .slider-content strong {
+    font-size: 2.5rem;
+  }
+
+  .slider-content p {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  .slide-show1 {
+    display: none !important;
+  }
+
+  .slide-show2 {
+    display: inline !important;
+  }
+}
+
+@media screen and (min-height: 600px) and (max-width: 1050px) and (orientation: landscape) {
+  /**our team css*/
+
+  .ourTeam h3 {
+    font-size: 4rem;
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+
+  .ourTeam p {
+    max-width: 95%;
+    font-size: 1.8rem;
+    margin-bottom: 8%;
+  }
+
+  .slider-div {
+    height: 60vh;
+  }
+
+  .slider-content strong {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    padding-left: 8%;
+    color: #fff;
+  }
+
+  .slider-content p {
+    font-size: 0.85rem;
+    max-width: 90%;
+  }
+
+  .slick-dots {
+    height: 15%;
+    display: inline-block; /* Ensure dots are displayed */
   }
 }

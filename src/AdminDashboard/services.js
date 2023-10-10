@@ -3,7 +3,10 @@ import "./index.css";
 import { InfinitySpin } from "react-loader-spinner";
 
 import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
+
+import Cookies from "js-cookie";
 
 import ModalBoxEdit from "./modalboxEdit";
 
@@ -27,20 +30,21 @@ const Services = () => {
 
   const [serviceTobeEdited, setServiceToEdit] = useState("");
 
-  const [toggleUser, setToggleUser] = useState("");
+  /**const [toggleUser, setToggleUser] = useState("");*/
 
   useEffect(() => {
     getAllServices();
   }, []);
 
   const getAllServices = async () => {
+    const adminId = Cookies.get("jwt_adminId");
     const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getAllServices`;
 
     const response = await fetch(url);
     const data = await response.json();
 
     if (response.ok) {
-      /*console.log(data.allServices);*/
+      /**console.log(data.allServices);*/
       setavailServices(data.allServices);
       setLoad(true);
     }
@@ -66,8 +70,10 @@ const Services = () => {
 
     const [showfaq, setfaq] = useState(false);
 
+    const adminId = Cookies.get("jwt_adminId");
+
     const [dataToBe, setData] = useState({
-      salonId: "64c1e5b880e7fc21fb096a71",
+      salonId: Cookies.get("jwt_salonId"),
       category: "",
       service: "",
       availableSlotCount: "",
@@ -83,6 +89,7 @@ const Services = () => {
       ans2: "",
       que3: "",
       ans3: "",
+      adminId,
     });
 
     useEffect(() => {
@@ -293,7 +300,7 @@ const Services = () => {
               setLoad(true);
               /*console.log(data);*/
               setData({
-                salonId: "64c1e5b880e7fc21fb096a71",
+                salonId: Cookies.get("jwt_salonId"),
                 category: "",
                 service: "",
                 availableSlotCount: "",
@@ -345,7 +352,7 @@ const Services = () => {
                 setLoad(true);
                 /*console.log(data);*/
                 setData({
-                  salonId: "64c1e5b880e7fc21fb096a71",
+                  salonId: Cookies.get("jwt_salonId"),
                   category: "",
                   service: "",
                   availableSlotCount: "",
@@ -424,6 +431,7 @@ const Services = () => {
                     }}
                     type="button"
                     className="service-button-admin-category1"
+                    style={{ cursor: "pointer" }}
                   >
                     Click here to get available categories back
                   </button>
@@ -574,7 +582,11 @@ const Services = () => {
                 </div>
                 <div className="service-button-admin-con">
                   <button
-                    style={{ paddingTop: "2%", paddingBottom: "2%" }}
+                    style={{
+                      paddingTop: "2%",
+                      paddingBottom: "2%",
+                      cursor: "pointer",
+                    }}
                     onClick={updatingServices}
                     className="service-button-admin"
                     type="button"
@@ -582,7 +594,11 @@ const Services = () => {
                     Add
                   </button>
                   <button
-                    style={{ paddingTop: "2%", paddingBottom: "2%" }}
+                    style={{
+                      paddingTop: "2%",
+                      paddingBottom: "2%",
+                      cursor: "pointer",
+                    }}
                     className="service-button-admin"
                     onClick={settingModal}
                     type="button"
@@ -594,6 +610,7 @@ const Services = () => {
                       bottom: "-50%",
                       borderRadius: ".3rem",
                       width: "5rem",
+                      cursor: "pointer",
                     }}
                     className="service-button-admin-faq"
                     onClick={() => {
@@ -608,6 +625,7 @@ const Services = () => {
             )}
             <div className="service-button-admin-con">
               <button
+                style={{ cursor: "pointer" }}
                 onClick={updatingServices}
                 className="service-button-admin"
                 type="button"
@@ -615,6 +633,7 @@ const Services = () => {
                 Add
               </button>
               <button
+                style={{ cursor: "pointer" }}
                 className="service-button-admin"
                 onClick={settingModal}
                 type="button"
@@ -623,7 +642,11 @@ const Services = () => {
               </button>
               <button
                 className="service-button-admin-faq"
-                style={{ borderRadius: ".3rem", width: "5rem" }}
+                style={{
+                  borderRadius: ".3rem",
+                  width: "5rem",
+                  cursor: "pointer",
+                }}
                 onClick={() => {
                   setfaq(!showfaq);
                 }}
@@ -682,7 +705,7 @@ const Services = () => {
         method: "DELETE",
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify({
-          salonId: "64c1e5b880e7fc21fb096a71",
+          salonId: Cookies.get("jwt_salonId"),
           serviceId: `${serviceTobeDeleted}`,
         }),
       };
@@ -730,6 +753,7 @@ const Services = () => {
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
+                  cursor: "pointer",
                 }}
                 type="button"
                 onClick={() => {
@@ -747,6 +771,7 @@ const Services = () => {
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
+                  cursor: "pointer",
                 }}
                 type="button"
               >
@@ -768,7 +793,8 @@ const Services = () => {
     );
   };
 
-  const toggle = async (event) => {
+  {
+    /* const toggle = async (event) => {
     setToggleUser(event.target.id);
     const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/salon/serviceToggle`;
 
@@ -776,7 +802,7 @@ const Services = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        salonId: "64c1e5b880e7fc21fb096a71",
+        salonId:Cookies.get("jwt_salonId")
         serviceId: `${event.target.id}`,
       }),
     };
@@ -788,60 +814,69 @@ const Services = () => {
       setToggleUser("");
       getAllServices();
     }
-  };
+  };*/
+  }
 
   return load ? (
     <>
       {showModal && <Modal />}
       <div className="dashboard-component2">
-        <button onClick={settingModal} className="add-service" type="button">
+        <button
+          onClick={settingModal}
+          className="add-service"
+          type="button"
+          style={{ cursor: "pointer" }}
+        >
           + Add new service
         </button>
-        <div className="avialable-products-head">
-          <div className="product-box7">
-            <p className="product-heads">Image</p>
-          </div>
-          <div className="product-box8">
-            <p className="product-heads">Enable/Disable</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Name</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Price</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Category</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Time</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Rating</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Reviews</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Slots</p>
-          </div>
-          <div className="product-box7">
-            <p className="product-heads">Action</p>
-            <img src="./updown.png" className="updown" alt="updown" />
-          </div>
-        </div>
-        {availableServices.map((each) => (
-          <div key={each._id} id={each._id} className="avialable-products">
+        {availableServices.length > 0 && (
+          <div className="avialable-products-head">
             <div className="product-box7">
-              <img
-                className="productimage"
-                src={each.image[0]}
-                alt="serviceimage"
-              />
+              <p className="product-heads">Image</p>
             </div>
-            <div id={each._id} className="product-box8">
+            {/*<div className="product-box8">
+            <p className="product-heads">Enable/Disable</p>
+           </div>*/}
+            <div className="product-box7">
+              <p className="product-heads">Name</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Price</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Category</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Time</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Rating</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Reviews</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Slots</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Action</p>
+              <img src="./updown.png" className="updown" alt="updown" />
+            </div>
+          </div>
+        )}
+        {availableServices.length > 0 ? (
+          availableServices.map((each) => (
+            <div key={each._id} id={each._id} className="avialable-products">
+              <div className="product-box7">
+                <img
+                  className="productimage"
+                  src={each.image[0]}
+                  alt="serviceimage"
+                />
+              </div>
+              {/*<div id={each._id} className="product-box9">
               {each._id === toggleUser ? (
-                <div>
+                <div style={{ position: "absolute", left: 0 }}>
                   <InfinitySpin color={"#4444D5"} height={60} width={60} />
                 </div>
               ) : (
@@ -851,66 +886,72 @@ const Services = () => {
                     onClick={toggle}
                     type="button"
                     className={each.active ? "togglebutton2" : "togglebutton1"}
+                    style={{ cursor: "pointer" }}
                   ></button>
                 </div>
               )}
-            </div>
-            <div className="product-box7">
-              <p>{each.service}</p>
-            </div>
-            <div id={each._id} className="product-box7">
-              <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
-            </div>
-            <div className="product-box7">
-              <p>{each.category}</p>
-            </div>
-            <div className="product-box7">
-              <p>{each.time} min</p>
-            </div>
-            <div className="product-box7">
-              <p>{each.rating}</p>
-            </div>
-            <div className="product-box7">
-              <p>{each.reviews.length}</p>
-            </div>
-            <div className="product-box7">
-              <p>{each.availableSlotCount}</p>
-            </div>
-            <div className="product-box7">
-              <div className="actions-con">
-                <button
-                  onClick={() => {
-                    setEditModel(true);
-                    setServiceToEdit(each._id);
-                  }}
-                  className="actions-button"
-                >
-                  <img
+            </div>*/}
+              <div className="product-box7">
+                <p>{each.service}</p>
+              </div>
+              <div id={each._id} className="product-box7">
+                <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
+              </div>
+              <div className="product-box7">
+                <p>{each.category}</p>
+              </div>
+              <div className="product-box7">
+                <p>{each.time} min</p>
+              </div>
+              <div className="product-box7">
+                <p>{each.rating}</p>
+              </div>
+              <div className="product-box7">
+                <p>{each.reviews.length}</p>
+              </div>
+              <div className="product-box7">
+                <p>{each.availableSlotCount}</p>
+              </div>
+              <div className="product-box7">
+                <div className="actions-con">
+                  <button
+                    onClick={() => {
+                      setEditModel(true);
+                      setServiceToEdit(each._id);
+                    }}
+                    className="actions-button"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <img
+                      id={each._id}
+                      className="actions-img"
+                      src="./edit.png"
+                      alt="edit"
+                    />
+                  </button>
+                  <button
                     id={each._id}
-                    className="actions-img"
-                    src="./edit.png"
-                    alt="edit"
-                  />
-                </button>
-                <button
-                  id={each._id}
-                  onClick={() => {
-                    setDeleteModal(true);
-                    setServiceToDelete(each._id);
-                  }}
-                  type="button"
-                  className="actions-button"
-                >
-                  <img
-                    className="actions-img"
-                    src="./delete-fill.png"
-                    alt="delete"
-                  />
-                </button>
+                    onClick={() => {
+                      setDeleteModal(true);
+                      setServiceToDelete(each._id);
+                    }}
+                    type="button"
+                    className="actions-button"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <img
+                      className="actions-img"
+                      src="./delete-fill.png"
+                      alt="delete"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <div>There Are No Services Added Yet.</div>
+        )}
       </div>
       {showDeleteModal && <ModalDelete />}
       {showEditModal && (

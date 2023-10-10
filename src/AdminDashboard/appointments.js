@@ -5,6 +5,8 @@ import { InfinitySpin } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import Cookies from "js-cookie";
+
 import moment from "moment";
 
 import { useState, useEffect } from "react";
@@ -32,6 +34,7 @@ const Appointments = () => {
   }, []);
 
   const getAllServices = async () => {
+    const adminId = Cookies.get("jwt_adminId");
     const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getAllServices`;
 
     const response = await fetch(url);
@@ -44,19 +47,25 @@ const Appointments = () => {
   };
 
   const getCustomerData = async () => {
-    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getAllUsers`;
+    const adminId = Cookies.get("jwt_adminId");
+    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getUsersByAdminId/${adminId}`;
+
     const response = await fetch(url);
     const data = await response.json();
     if (response.ok) {
-      setCustomerData(data.users);
+      setCustomerData(data.data);
     }
   };
 
   const getMyOrders = async () => {
+    const adminId = Cookies.get("jwt_adminId");
     const response = await fetch(
-      `${process.env.REACT_APP_ROOT_URL}/api/admin/appoinments`
+      `${process.env.REACT_APP_ROOT_URL}/api/admin/getAppointmentsByAdminId/${adminId}`
     );
     const data = await response.json();
+
+    console.log(data);
+
     if (response.ok) {
       const filterdProducts = data.salons.filter(
         (each) => each["serviceId"] !== undefined
@@ -111,8 +120,10 @@ const Appointments = () => {
     const getTheTimeSlots = async (id, date) => {
       const url = `${process.env.REACT_APP_ROOT_URL}/api/salon/getAllBookedSlots`;
 
+      const getId = Cookies.get("jwt_salonId");
+
       const tobeSent = {
-        salonId: "64c1e5b880e7fc21fb096a71",
+        salonId: getId,
         serviceId: id,
         date: date,
       };
@@ -128,6 +139,8 @@ const Appointments = () => {
 
       const response = await fetch(url, detials);
       const data = await response.json();
+
+      console.log(data);
 
       if (response.ok) {
         /*console.log(data)*/
@@ -197,9 +210,10 @@ const Appointments = () => {
           closeOnClick: true,
           theme: "colored",
         });
+        const getId = Cookies.get("jwt_salonId");
         const serviceToBook = {
           userId: selectedUser.id,
-          salonId: "64c1e5b880e7fc21fb096a71",
+          salonId: getId,
           serviceId: dateTime.serviceId,
           time: dateTime.time,
           date: dateTime.date,
@@ -210,7 +224,9 @@ const Appointments = () => {
     };
 
     const bookTheServices = () => {
-      const url = `${process.env.REACT_APP_ROOT_URL}/api/receptionist/bookSalonByAdmin`;
+      const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/bookSalonByAdmin`;
+
+      const adminId = Cookies.get("jwt_adminId");
 
       bookingArr.map(async (each) => {
         setLoadB(true);
@@ -219,10 +235,8 @@ const Appointments = () => {
 
           headers: { "Content-Type": "application/json" },
 
-          body: JSON.stringify(each),
+          body: JSON.stringify({ ...each, adminId }),
         };
-
-        console.log(each);
 
         const res = await fetch(url, reqConfigure);
 
@@ -253,7 +267,7 @@ const Appointments = () => {
               <InfinitySpin color={"#4444D5"} height={150} width={150} />
             </div>
           </div>
-        ) : (
+        ) : availableServices.length > 0 ? (
           <div className="modal-box-appointment">
             <h1
               style={{
@@ -474,6 +488,7 @@ const Appointments = () => {
                             type="button"
                             className="service-appointment-book"
                             onClick={addToBook}
+                            style={{ cursor: "pointer" }}
                           >
                             Add to book
                           </button>
@@ -497,6 +512,7 @@ const Appointments = () => {
                 marginTop: 15,
                 marginBottom: 10,
                 borderRadius: 5,
+                cursor: "pointer",
               }}
               onClick={settinMode}
               type="button"
@@ -520,12 +536,17 @@ const Appointments = () => {
                 position: "absolute",
                 bottom: 15,
                 right: 40,
+                cursor: "pointer",
               }}
               onClick={bookTheServices}
               type="button"
             >
               Book
             </button>
+          </div>
+        ) : (
+          <div className="modal-box-appointment">
+            No Servies Were Added Yet.
           </div>
         )}
       </>
@@ -588,6 +609,7 @@ const Appointments = () => {
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
+                  cursor: "pointer",
                 }}
                 type="button"
                 onClick={() => {
@@ -604,6 +626,7 @@ const Appointments = () => {
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
+                  cursor: "pointer",
                 }}
                 type="button"
               >
@@ -633,88 +656,101 @@ const Appointments = () => {
     <>
       {showMode && <Mode customerData={customerData} />}
       <div className="dashboard-component2">
-        <button onClick={settinMode} className="add-service" type="button">
+        <button
+          style={{ cursor: "pointer" }}
+          onClick={settinMode}
+          className="add-service"
+          type="button"
+        >
           + Book an appoinment
         </button>
-        <div className="avialable-products-head">
-          <div className="product-box7">
-            <p className="product-heads">Image</p>
-          </div>
-
-          <div className="product-box6">
-            <p className="product-heads">Name</p>
-          </div>
-          <div className="product-box6">
-            <p className="product-heads">Price</p>
-          </div>
-          <div className="product-box3">
-            <p className="product-heads">Category</p>
-          </div>
-          <div className="product-box3">
-            <p className="product-heads">User Name</p>
-          </div>
-          <div className="product-box3">
-            <p className="product-heads">Date</p>
-          </div>
-          <div className="product-box6">
-            <p className="product-heads">Time</p>
-          </div>
-          <div className="product-box6">
-            <p className="product-heads">Action</p>
-            <img src="./updown.png" className="updown" alt="updown" />
-          </div>
-        </div>
-        {myorders.map((each) => (
-          <div key={each._id} id={each._id} className="avialable-products">
+        {myorders.length > 0 && (
+          <div className="avialable-products-head">
             <div className="product-box7">
-              <img
-                className="productimage"
-                src={each.photos[0]}
-                alt="serviceimage"
-              />
+              <p className="product-heads">Image</p>
             </div>
 
             <div className="product-box6">
-              <p>{each.name}</p>
-            </div>
-            <div id={each._id} className="product-box6">
-              <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
-            </div>
-            <div className="product-box3">
-              <p>{each.category}</p>
-            </div>
-            <div className="product-box3">
-              <p>{each.userName}</p>
-            </div>
-            <div className="product-box3">
-              <p>{each.date}</p>
+              <p className="product-heads">Name</p>
             </div>
             <div className="product-box6">
-              <p>{each.time}</p>
+              <p className="product-heads">Price</p>
             </div>
+            <div className="product-box3">
+              <p className="product-heads">Category</p>
+            </div>
+            <div className="product-box3">
+              <p className="product-heads">User Name</p>
+            </div>
+            <div className="product-box3">
+              <p className="product-heads">Date</p>
+            </div>
+            <div className="product-box6">
+              <p className="product-heads">Time</p>
+            </div>
+            <div className="product-box6">
+              <p className="product-heads">Action</p>
+              <img src="./updown.png" className="updown" alt="updown" />
+            </div>
+          </div>
+        )}
+        {myorders.length > 0 ? (
+          myorders.map((each) => (
+            <div key={each._id} id={each._id} className="avialable-products">
+              <div className="product-box7">
+                <img
+                  className="productimage"
+                  src={each.photos[0]}
+                  alt="serviceimage"
+                />
+              </div>
 
-            <div className="product-box6">
-              <div className="actions-con">
-                <button
-                  onClick={() => {
-                    setAppToDelete({
-                      userId: each.userId,
-                      orderId: each._id,
-                    });
-                  }}
-                  type="button"
-                  className="actions-button"
-                >
-                  <img
-                    className="actions-img"
-                    src="./delete-fill.png"
-                    alt="delete"
-                  />
-                </button>
+              <div className="product-box6">
+                <p>{each.name}</p>
+              </div>
+              <div id={each._id} className="product-box6">
+                <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
+              </div>
+              <div className="product-box3">
+                <p>{each.category}</p>
+              </div>
+              <div className="product-box3">
+                <p>{each.userName}</p>
+              </div>
+              <div className="product-box3">
+                <p>{each.date}</p>
+              </div>
+              <div className="product-box6">
+                <p>{each.time}</p>
+              </div>
+
+              <div className="product-box6">
+                <div className="actions-con">
+                  <button
+                    onClick={() => {
+                      setAppToDelete({
+                        userId: each.userId,
+                        orderId: each._id,
+                      });
+                    }}
+                    type="button"
+                    className="actions-button"
+                  >
+                    <img
+                      className="actions-img"
+                      src="./delete-fill.png"
+                      alt="delete"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
+          ))
+        ) : (
+          <div>
+            <p>You Have No Appointments Yet</p>
           </div>
-        ))}
+        )}
       </div>
       {appTodelete.userId !== "" && <ModalDeleteApp />}
     </>

@@ -5,6 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { InfinitySpin } from "react-loader-spinner";
 
+import Cookies from "js-cookie";
+
 const CategoryEdit = () => {
   const [serviceEdit, setServiceEdit] = useState(false);
   const [productEdit, setProductEdit] = useState(false);
@@ -13,11 +15,12 @@ const CategoryEdit = () => {
 
   const ModalServiceEdit = () => {
     const [categories, setCategories] = useState("");
+    const getId = Cookies.get("jwt_salonId");
     const [newValues, setNewValuse] = useState({
       name: "",
       image: "",
       categoryId: "Select",
-      salonId: "64c1e5b880e7fc21fb096a71",
+      salonId: getId,
     });
 
     useEffect(() => {
@@ -341,9 +344,10 @@ const CategoryEdit = () => {
 
   const ModalServiceDelete = () => {
     const [categories, setCategories] = useState("");
+    const getId = Cookies.get("jwt_salonId");
     const [newValues, setNewValuse] = useState({
       categoryId: "Select",
-      salonId: "64c1e5b880e7fc21fb096a71",
+      salonId: getId,
     });
 
     useEffect(() => {

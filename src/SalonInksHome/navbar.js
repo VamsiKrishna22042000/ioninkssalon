@@ -37,7 +37,12 @@ function NavBar(props) {
           ) : (
             <button
               onClick={() => {
+                Cookies.remove("jwt_adminId");
                 Cookies.remove("jwt_admin");
+                Cookies.remove("jwt_userId");
+                Cookies.remove("jwt_token");
+                Cookies.remove("jwt_salonId");
+                Cookies.remove("jwt_user");
                 props.props.history.replace("/");
               }}
               type="button"

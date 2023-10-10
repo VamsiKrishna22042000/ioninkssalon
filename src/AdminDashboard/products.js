@@ -5,13 +5,15 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import Cookies from "js-cookie";
+
 import { InfinitySpin } from "react-loader-spinner";
 
 import Mode from "./modalboxofproduct.js";
 
 const Products = () => {
   const [productsAvailable, setAvailableProducts] = useState([]);
-  const [buttonToggle, setToggleProduct] = useState("");
+  /*const [buttonToggle, setToggleProduct] = useState("");*/
   const [load, setLoad] = useState(false);
   const [showMode, setMode] = useState(false);
   const [availableTypes, setType] = useState([]);
@@ -77,6 +79,7 @@ const Products = () => {
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
+                  cursor: "pointer",
                 }}
                 type="button"
                 onClick={() => {
@@ -93,6 +96,7 @@ const Products = () => {
                   color: "#FFFFFF",
                   borderWidth: 0,
                   borderRadius: 5,
+                  cursor: "pointer",
                 }}
                 type="button"
               >
@@ -285,10 +289,16 @@ const Products = () => {
               Upload Image for product
             </label>
             <input id="file" onChange={addService} type="file" />
-            <div className="service-button-admin-con">
+            <div
+              style={{ height: "1.5rem" }}
+              className="service-button-admin-con"
+            >
               <button
                 className="service-button-admin"
                 type="button"
+                style={{
+                  cursor: "pointer",
+                }}
                 onClick={updateToProductList}
               >
                 Edit
@@ -299,8 +309,9 @@ const Products = () => {
                   setServiceToEdit("");
                 }}
                 type="button"
+                style={{ cursor: "pointer" }}
               >
-                close
+                Close
               </button>
             </div>
           </form>
@@ -310,12 +321,13 @@ const Products = () => {
   };
 
   const getAllProducts = async () => {
+    const adminId = Cookies.get("jwt_adminId");
     const res = await fetch(
-      `${process.env.REACT_APP_ROOT_URL}/api/admin/getAllProduct`
+      `${process.env.REACT_APP_ROOT_URL}/api/admin/getProductsByAdminId/${adminId}`
     );
     const da = await res.json();
     if (res.ok) {
-      setAvailableProducts(da.products);
+      setAvailableProducts(da.data);
       setLoad(true);
       /*console.log(da.products)*/
     }
@@ -360,7 +372,8 @@ const Products = () => {
     getSubCategories(event.target.value);
   };
 
-  const toggleProduct = async (event) => {
+  {
+    /*const toggleProduct = async (event) => {
     setToggleProduct(event.target.id);
 
     const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/product/productToggle`;
@@ -379,7 +392,8 @@ const Products = () => {
       setToggleProduct("");
       getAllProducts();
     }
-  };
+  };*/
+  }
 
   return load ? (
     <>
@@ -394,144 +408,126 @@ const Products = () => {
         />
       )}
       <div className="dashboard-component2">
-        <button onClick={settinMode} className="add-service" type="button">
+        <button
+          style={{ cursor: "pointer" }}
+          onClick={settinMode}
+          className="add-service"
+          type="button"
+        >
           + Add new product
         </button>
-        <div className="avialable-products-head">
-          <div className="product-box">
-            <p className="product-heads">Image</p>
-          </div>
-          <div className="product-box2con">
-            <p className="product-heads">Enable/Disable</p>
-          </div>
-          <div className="product-box2">
-            <p className="product-heads">Name</p>
-          </div>
-          <div className="product-box2">
-            <p className="product-heads">Price</p>
-          </div>
-          <div className="product-box2con">
-            <p className="product-heads">Type</p>
-          </div>
-          <div className="product-box5">
-            <p className="product-heads">Category</p>
-          </div>
-          <div className="product-box2con">
-            <p className="product-heads">Rating</p>
-          </div>
-          <div className="product-box2con">
-            <p className="product-heads">Reviews</p>
-          </div>
-          <div className="product-box6">
-            <p className="product-heads">Action</p>
-            <img src="./updown.png" className="updown" alt="updown" />
-          </div>
-        </div>
-        {productsAvailable.map((each) => (
-          <div key={each._id} id={each._id} className="avialable-products">
-            <div className="product-box">
-              <img
-                className="productimage"
-                src={each.photos[0]}
-                alt="productimage"
-              />
+        {productsAvailable.length > 0 && (
+          <div className="avialable-products-head">
+            <div className="product-box7">
+              <p className="product-heads">Image</p>
             </div>
-            <div id={each._id} className="product-box2con">
+            {/*<div className="product-box8">
+            <p className="product-heads">Enable/Disable</p>
+           </div>*/}
+            <div className="product-box7">
+              <p className="product-heads">Name</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Price</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Type</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Category</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Rating</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Reviews</p>
+            </div>
+            <div className="product-box7">
+              <p className="product-heads">Action</p>
+              <img src="./updown.png" className="updown" alt="updown" />
+            </div>
+          </div>
+        )}
+        {productsAvailable.length > 0 ? (
+          productsAvailable.map((each) => (
+            <div key={each._id} id={each._id} className="avialable-products">
+              <div className="product-box7">
+                <img
+                  className="productimage"
+                  src={each.photos[0]}
+                  alt="productimage"
+                />
+              </div>
+              {/*<div id={each._id} className="product-box9">
               {buttonToggle === each._id ? (
-                <InfinitySpin color={"#4444D5"} height={150} width={150} />
+                <div style={{ position: "absolute", left: 0 }}>
+                  <InfinitySpin color={"#4444D5"} height={60} width={60} />
+                </div>
               ) : (
                 <div className={each.active ? "toggle-con3" : "toggle-con4"}>
                   <button
                     onClick={toggleProduct}
                     id={each._id}
                     type="button"
+                    style={{ cursor: "pointer" }}
                     className={each.active ? "togglebutton2" : "togglebutton1"}
                   ></button>
                 </div>
               )}
-            </div>
-            <div className="product-box2">
-              <p
-                style={{
-                  textTransform: "capitalize",
-                  textTransform: "capitalize",
-
-                  display: "-webkit-box",
-                  WebkitLineClamp: 3,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {each.name}
-              </p>
-            </div>
-            <div id={each._id} className="product-box2">
-              <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
-            </div>
-            <div className="product-box2con">
-              <p
-                style={{
-                  textTransform: "capitalize",
-                  fontWeight: 400,
-                  textTransform: "capitalize",
-
-                  display: "-webkit-box",
-                  WebkitLineClamp: 3,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-                className="product-heads"
-              >
-                {each.type}
-              </p>
-            </div>
-            <div className="product-box5">
-              <p>{each.category}</p>
-            </div>
-            <div className="product-box2con">
-              <p
-                style={{ textTransform: "capitalize", fontWeight: 400 }}
-                className="product-heads"
-              >
-                {each.rating}
-              </p>
-            </div>
-            <div className="product-box2con">
-              <p
-                style={{ textTransform: "capitalize", fontWeight: 400 }}
-                className="product-heads"
-              >
-                {each.productReviews.length}
-              </p>
-            </div>
-            <div className="product-box6">
-              <div className="actions-con">
-                <button
-                  onClick={() => {
-                    setServiceToEdit(each._id);
-                  }}
-                  className="actions-button"
-                >
-                  <img className="actions-img" src="./edit.png" alt="edit" />
-                </button>
-                <button
-                  onClick={() => {
-                    setServiceToDelete(each._id);
-                  }}
-                  className="actions-button"
-                >
-                  <img
-                    className="actions-img"
-                    src="./delete-fill.png"
-                    alt="delete"
-                  />
-                </button>
+            </div>*/}
+              <div className="product-box7">
+                <p>{each.name}</p>
+              </div>
+              <div id={each._id} className="product-box7">
+                <p style={{ textTransform: "capitalize" }}>₹ {each.price}</p>
+              </div>
+              <div className="product-box7">
+                <p>{each.type}</p>
+              </div>
+              <div className="product-box7">
+                <p>{each.category}</p>
+              </div>
+              <div className="product-box7">
+                <p style={{ textTransform: "capitalize" }}>{each.rating}</p>
+              </div>
+              <div className="product-box7">
+                <p style={{ textTransform: "capitalize" }}>
+                  {each.productReviews.length}
+                </p>
+              </div>
+              <div className="product-box7">
+                <div className="actions-con">
+                  <button
+                    onClick={() => {
+                      setServiceToEdit(each._id);
+                    }}
+                    className="actions-button"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <img className="actions-img" src="./edit.png" alt="edit" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      setServiceToDelete(each._id);
+                    }}
+                    className="actions-button"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <img
+                      className="actions-img"
+                      src="./delete-fill.png"
+                      alt="delete"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
+          ))
+        ) : (
+          <div>
+            <p>There Are No Products Added Yet</p>
           </div>
-        ))}
+        )}
       </div>
       {serviceTobeDeleted !== "" && <ModalDeleteProduct />}
       {serviceTobeEdited !== "" && <ModalEditProduct />}

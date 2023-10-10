@@ -4,6 +4,8 @@ import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import Cookies from "js-cookie";
+
 import { InfinitySpin } from "react-loader-spinner";
 
 const ModalBoxEdit = (props) => {
@@ -23,7 +25,7 @@ const ModalBoxEdit = (props) => {
   );
 
   const [demoedit, demosetData] = useState({
-    salonId: "64c1e5b880e7fc21fb096a71",
+    salonId: Cookies.get("jwt_salonId"),
     serviceId: serviceTobeEdited,
     updatedName: filteredService[0].service,
     availableSlotCount: filteredService[0].availableSlotCount,
@@ -41,7 +43,7 @@ const ModalBoxEdit = (props) => {
   });
 
   const [edit, setData] = useState({
-    salonId: "64c1e5b880e7fc21fb096a71",
+    salonId: Cookies.get("jwt_salonId"),
     serviceId: serviceTobeEdited,
     updatedName: filteredService[0].service,
     availableSlotCount: filteredService[0].availableSlotCount,
@@ -178,7 +180,7 @@ const ModalBoxEdit = (props) => {
 
     if (count > 0) {
       setLoad(false);
-      fd.append("salonId", "64c1e5b880e7fc21fb096a71");
+      fd.append("salonId", "6515a80d54e9fd108dcc4254");
       fd.append("serviceId", `${serviceTobeEdited}`);
       sendEditedData();
       console.log(Object.fromEntries(fd.entries()));

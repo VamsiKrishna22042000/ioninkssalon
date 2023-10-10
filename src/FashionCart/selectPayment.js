@@ -90,7 +90,9 @@ const SelectPayment = (props) => {
   }, []);
 
   const getCustomerData = async () => {
-    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getAllUsers`;
+    const adminId = Cookies.get("jwt_adminId");
+
+    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getUsersByAdminId/${adminId}`;
     const response = await fetch(url);
     const data = await response.json();
     if (response.ok) {

@@ -9,7 +9,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Customers = () => {
+const Staff = () => {
   const [customerData, setCustomerData] = useState([]);
 
   const [showAddCustomer, setAddCustomer] = useState(false);
@@ -28,7 +28,7 @@ const Customers = () => {
     const adminId = Cookies.get("jwt_adminId");
 
     const [tobeAdded, setTobeAdded] = useState({
-      email: "",
+      category: "",
       mobileNumber: "",
       name: "",
       adminId,
@@ -61,16 +61,8 @@ const Customers = () => {
           closeOnClick: true,
           theme: "colored",
         });
-      } else if (tobeAdded.email === "") {
-        toast.error("Please Enter Email", {
-          position: "top-center",
-          autoClose: 2000,
-          pauseOnHover: true,
-          closeOnClick: true,
-          theme: "colored",
-        });
-      } else if (!tobeAdded.email.endsWith("@gmail.com")) {
-        toast.error("Please Enter correct email", {
+      } else if (tobeAdded.category === "") {
+        toast.error("Please Enter Category", {
           position: "top-center",
           autoClose: 2000,
           pauseOnHover: true,
@@ -79,7 +71,7 @@ const Customers = () => {
         });
       } else {
         setAddCustomerLoad(true);
-        const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/user/addUser`;
+        const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/createStaff`;
         const options = {
           method: "POST",
           headers: {
@@ -127,12 +119,12 @@ const Customers = () => {
         ) : (
           <form style={{ height: 250, width: 410 }} className="modal-Customer">
             <h1 style={{ marginBottom: 10, color: "#3E3E3E", fontSize: 20 }}>
-              Add New Customer
+              Add New Staff
             </h1>
-            <lable htmlFor="service-name-admin">Customer Name</lable>
+            <lable htmlFor="service-name-admin">Staff Name</lable>
             <input
               value={tobeAdded.name}
-              placeholder="Enter Customer Name"
+              placeholder="Enter Staff Name"
               className="service-admin-input"
               id="service-name-admin"
               type="text"
@@ -144,7 +136,7 @@ const Customers = () => {
                 }));
               }}
             />
-            <lable htmlFor="service-num-admin">Customer Mobile Number</lable>
+            <lable htmlFor="service-num-admin">Staff Mobile Number</lable>
             <input
               placeholder="Enter Mobile Number"
               value={tobeAdded.mobileNumber}
@@ -160,9 +152,9 @@ const Customers = () => {
                 }));
               }}
             />
-            <lable htmlFor="service-email-admin">Customer Email</lable>
+            <lable htmlFor="service-email-admin">Staff Category</lable>
             <input
-              placeholder="Enter Customer Email"
+              placeholder="Enter Staff Category"
               value={tobeAdded.email}
               className="service-admin-input"
               id="service-email-admin"
@@ -171,7 +163,7 @@ const Customers = () => {
               onChange={(event) => {
                 setTobeAdded((prevAdd) => ({
                   ...prevAdd,
-                  email: event.target.value,
+                  category: event.target.value,
                 }));
               }}
             />
@@ -210,7 +202,7 @@ const Customers = () => {
 
     const [tobeEdited, setTobeEdited] = useState({
       userId: `${editCustomer}`,
-      email: filteredCustomer[0].email,
+      category: filteredCustomer[0].category,
       mobileNumber: parseInt(filteredCustomer[0].mobileNumber),
       name: filteredCustomer[0].name,
     });
@@ -221,7 +213,7 @@ const Customers = () => {
       );
       console.log(alreadyPresent);
       if (
-        filteredCustomer[0].email === tobeEdited.email &&
+        filteredCustomer[0].staff === tobeEdited.staff &&
         filteredCustomer[0].mobileNumber === tobeEdited.mobileNumber &&
         filteredCustomer[0].email === tobeEdited.email
       ) {
@@ -468,7 +460,7 @@ const Customers = () => {
     setLoad(true);
     const adminId = Cookies.get("jwt_adminId");
     console.log(adminId);
-    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getUsersByAdminId/${adminId}`;
+    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/getStaffByAdminId/${adminId}`;
     const response = await fetch(url);
     const data = await response.json();
     if (response.ok) {
@@ -491,7 +483,7 @@ const Customers = () => {
               type="button"
               style={{ cursor: "pointer" }}
             >
-              + Add Customer
+              + Add Staff
             </button>
             <div className="avialable-products-head">
               <div className="product-box">
@@ -504,7 +496,7 @@ const Customers = () => {
                 <p className="product-heads">Mobile Number</p>
               </div>
               <div className="product-box4">
-                <p className="product-heads">Email</p>
+                <p className="product-heads">Category</p>
               </div>
               <div className="product-box5">
                 <p className="product-heads">Address</p>
@@ -531,7 +523,7 @@ const Customers = () => {
                   <p>{each.mobileNumber}</p>
                 </div>
                 <div className="product-box4">
-                  <p>{each.email}</p>
+                  <p>{each.category}</p>
                 </div>
 
                 <div className="product-box5">
@@ -582,9 +574,9 @@ const Customers = () => {
               type="button"
               style={{ cursor: "pointer" }}
             >
-              + Add Customer
+              + Add Staff
             </button>
-            You Have No Customers
+            No Staff Members Added Yet
           </div>
         )
       ) : (
@@ -598,4 +590,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default Staff;

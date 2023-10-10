@@ -23,11 +23,13 @@ const options = [
     imgUrl1: "dashboard-services2.png",
     name: "Services",
   },
-  /**{
+  {
     imgUrl: "dashboard-products.png",
+    imgUrl1: "dashboard-products2.png",
     name: "Products",
   },
-  {
+
+  /**{
     imgUrl: "dashboard-orders.png",
     name: "Orders",
   },
@@ -35,13 +37,14 @@ const options = [
     imgUrl: "dashboard-events.png",
     name: "Events",
   },
-  { imgUrl: "eventbooked.png", name: "Booking's" },*/
-  { imgUrl: "slider.png", imgUrl1: "slider2.png", name: "Banner's" },
+  { imgUrl: "eventbooked.png", name: "Booking's" },
+  { imgUrl: "slider.png", imgUrl1: "slider2.png", name: "Banner's" }
   {
     imgUrl: "youtube.png",
     imgUrl1: "youtube2.png",
     name: "Videos",
-  },
+  }*/
+  { imgUrl: "staff.png", imgUrl1: "staff2.png", name: "Staff" },
   {
     imgUrl: "CategoryEdit.png",
     imgUrl1: "CategoryEdit2.png",

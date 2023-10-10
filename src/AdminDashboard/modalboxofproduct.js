@@ -1,6 +1,7 @@
+import Cookies from "js-cookie";
 import "./index.css";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { InfinitySpin } from "react-loader-spinner";
 
@@ -117,6 +118,10 @@ const Mode = (props) => {
         const fd = new FormData();
         const fd2 = new FormData();
 
+        const adminId = Cookies.get("jwt_adminId");
+        fd.append("adminId", adminId);
+        fd2.append("adminId", adminId);
+
         for (var key in dataToBe) {
           fd.append(`${key}`, dataToBe[key]);
         }
@@ -159,6 +164,10 @@ const Mode = (props) => {
     } else {
       setProductLoader(true);
       const fd = new FormData();
+
+      const adminId = Cookies.get("jwt_adminId");
+
+      fd.append("adminId", adminId);
 
       for (var key in dataToBe) {
         fd.append(`${key}`, dataToBe[key]);
@@ -271,6 +280,7 @@ const Mode = (props) => {
             }}
             type="button"
             className="service-button-admin-category1"
+            style={{ cursor: "pointer" }}
           >
             Click here to get available Type & Categories back
           </button>
@@ -282,6 +292,7 @@ const Mode = (props) => {
             }}
             type="button"
             className="service-button-admin-category1"
+            style={{ cursor: "pointer" }}
           >
             Click here to get available Categories back
           </button>
@@ -307,6 +318,12 @@ const Mode = (props) => {
         <input id="file" onChange={addService} type="file" />
         <div className="service-button-admin-con">
           <button
+            style={{
+              marginTop: "2%",
+              paddingTop: "2.5%",
+              paddingBottom: "2.5%",
+              cursor: "pointer",
+            }}
             className="service-button-admin"
             type="button"
             onClick={updateToProductList}
@@ -314,13 +331,19 @@ const Mode = (props) => {
             Add
           </button>
           <button
+            style={{
+              marginTop: "2%",
+              paddingTop: "2.5%",
+              paddingBottom: "2.5%",
+              cursor: "pointer",
+            }}
             className="service-button-admin"
             onClick={() => {
               settinMode();
             }}
             type="button"
           >
-            close
+            Close
           </button>
         </div>
         <form className="modal-box2">

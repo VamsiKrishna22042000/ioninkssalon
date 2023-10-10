@@ -75,6 +75,8 @@ const Beautyzone = (props) => {
 
     const data = await response.json();
 
+    const adminId = Cookies.get("jwt_adminId");
+
     const res = await fetch(
       `${process.env.REACT_APP_ROOT_URL}/api/admin/getAllServices`
     );

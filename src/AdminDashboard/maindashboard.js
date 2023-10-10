@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import { InfinitySpin } from "react-loader-spinner";
 
+import Cookies from "js-cookie";
+
 const Maindashboard = () => {
   const [dashboarddata, setDashboardData] = useState([]);
   const [load, setLoad] = useState(false);
@@ -13,7 +15,8 @@ const Maindashboard = () => {
   }, []);
 
   const getDashboardData = async () => {
-    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/dashBoardDetaiils`;
+    const adminId = Cookies.get("jwt_adminId");
+    const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/dashBoardDetaiils/${adminId}`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -81,22 +84,20 @@ const Maindashboard = () => {
             <p style={{ margin: 0, paddingLeft: 1 }}>Services</p>
           </div>
         </div>
-        {/**<div className="dashboard-data-content">
+        <div className="dashboard-data-content">
           <div className="dash-board-img-con">
             <img
-              src="/dashboard-products.png"
+              src="/dashboard-products2.png"
               className="dash-board-data-img"
               alt="dashboard-icons"
             />
           </div>
           <div className="dashboard-data-numbers">
-            <h1 style={{ margin: 0, color: "#4e4e4e" }}>
-              {dashboarddata[4].totalProducts}
-            </h1>
+            <h1>{dashboarddata[4].totalProducts}</h1>
             <p style={{ margin: 0, paddingLeft: 1 }}>Products</p>
           </div>
         </div>
-        <div className="dashboard-data-content">
+        {/**<div className="dashboard-data-content">
           <div className="dash-board-img-con">
             <img
               src="/dashboard-events.png"

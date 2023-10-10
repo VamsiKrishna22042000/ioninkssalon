@@ -25,7 +25,7 @@ const LoginAdmin = (props) => {
   const LoginRequest = async () => {
     if ((email !== "", password !== "")) {
       setLoad(true);
-      const url = `https://beauty-management.onrender.com/api/admin/adminLogin`;
+      const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/adminLogin`;
 
       const reqConfigure = {
         method: "POST",
@@ -41,11 +41,14 @@ const LoginAdmin = (props) => {
 
       const data = await response.json();
 
+      console.log(data);
+
       if (response.ok) {
         Cookies.set("jwt_admin", data.result._id, { expires: 30 });
         Cookies.set("jwt_user", data.result.email, { expires: 30 });
         Cookies.set("jwt_token", data.token, { expires: 30 });
         Cookies.set("jwt_adminId", data.result._id, { expires: 30 });
+        Cookies.set("jwt_salonId", data.salonId, { expires: 30 });
         history.replace("/admindashboard");
       } else {
         setLoad(false);

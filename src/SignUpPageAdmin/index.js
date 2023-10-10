@@ -26,7 +26,7 @@ const SignUpAdmin = (props) => {
   const signUpRequest = async () => {
     if ((name !== "" && email !== "", password !== "")) {
       setLoad(true);
-      const url = `https://beauty-management.onrender.com/api/admin/adminSignup`;
+      const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/adminSignup`;
 
       const reqConfigure = {
         method: "POST",
@@ -47,6 +47,7 @@ const SignUpAdmin = (props) => {
         Cookies.set("jwt_user", data.result.email, { expires: 30 });
         Cookies.set("jwt_token", data.token, { expires: 30 });
         Cookies.set("jwt_adminId", data.result._id, { expires: 30 });
+        Cookies.set("jwt_salonId", data.salonId, { expires: 30 });
         history.replace("/admindashboard");
       } else {
         setLoad(false);
@@ -130,14 +131,14 @@ const SignUpAdmin = (props) => {
           <div>
             <h1>Sign Up</h1>
             <div className="sign-in-inputs">
-              <p id="name">Name</p>
+              <p id="name">Salon Name</p>
               <input
                 onChange={(e) => {
                   setUpName(e.target.value);
                 }}
                 id="name"
                 type="text"
-                placeholder="Enter Name"
+                placeholder="Enter Salon Name"
               />
               <p id="email">Email</p>
               <input

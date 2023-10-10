@@ -99,7 +99,7 @@ const Cart = (props) => {
         const url = `${process.env.REACT_APP_ROOT_URL}/api/user/bookSalon`;
         /*console.log(each.serviceId)*/ const tobeSent = {
           userId: Cookies.get("jwt_user"),
-          salonId: "64c1e5b880e7fc21fb096a71",
+          salonId: Cookies.get("jwt_salonId"),
           serviceId: each.serviceId,
           cartId: each._id,
           time: each.time,

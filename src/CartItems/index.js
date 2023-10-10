@@ -188,7 +188,7 @@ const CartItems = (props) => {
       const url = `${process.env.REACT_APP_ROOT_URL}/api/salon/getAllBookedSlots`;
 
       const getSlots = {
-        salonId: "64c1e5b880e7fc21fb096a71",
+        salonId: Cookies.get("jwt_salonId"),
         serviceId: each.serviceId,
         date: formatdate(new Date(moment()._d)),
       };
@@ -344,7 +344,7 @@ const CartItems = (props) => {
     const url = `${process.env.REACT_APP_ROOT_URL}/api/salon/getAllBookedSlots`;
 
     const tobeSent = {
-      salonId: "64c1e5b880e7fc21fb096a71",
+      salonId: Cookies.get("jwt_salonId"),
       serviceId: serviceId,
       date: formatdate(new Date(date)),
     };
