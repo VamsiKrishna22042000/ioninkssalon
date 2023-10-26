@@ -361,7 +361,7 @@ const Staff = () => {
 
     const deletingCust = async () => {
       setLoadingDelete(true);
-      const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/deleteUser/${deleteCustomer}`;
+      const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/staff/deleteStaff/${deleteCustomer}`;
 
       const requestConfigure = {
         method: "DELETE",
