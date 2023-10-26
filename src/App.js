@@ -47,7 +47,28 @@ import Training from "./training/training";
 import SignUpAdmin from "./SignUpPageAdmin";
 import LoginAdmin from "./LoginAdmin/loginAdmin.js";
 
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      var viewheight = window.height();
+
+      var viewwidth = window.width();
+
+      var viewport = "meta[name=viewport]";
+
+      viewport.attr(
+        "content",
+        "height=" +
+          viewheight +
+          "px, width=" +
+          viewwidth +
+          "px,inital-scale=1.0"
+      );
+    }, 300);
+  });
+
   return (
     <BrowserRouter>
       <Switch>
