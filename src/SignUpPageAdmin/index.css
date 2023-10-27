@@ -286,10 +286,13 @@
   }
 
   .signup-main-con {
+    margin-top: 5rem;
     height: 120vh;
+    gap: 0;
   }
 
   .signup-main-con div:nth-child(2) {
+    margin-top: 20%;
     height: auto;
     padding-top: 35%;
     padding-bottom: 35%;

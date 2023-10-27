@@ -11,7 +11,7 @@ function NavBar(props) {
 
   return (
     <>
-      <section className="saloninks-navbar-con">
+      <section style={{ top: 0 }} className="saloninks-navbar-con">
         <img src="/saloninkslogo2.png" alt="logo" className="saloninkslogo" />
         <div className="nav-bar-section">
           <p>Home</p>

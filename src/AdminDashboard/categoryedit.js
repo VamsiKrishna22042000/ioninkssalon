@@ -57,15 +57,12 @@ const CategoryEdit = () => {
       }
     };
 
-    const [loadEdit, setLoadEdit] = useState(false);
-
     const updateEditService = async () => {
       if (
         newValues.categoryId !== "Select" ||
         newValues.name !== "" ||
         newValues.image !== ""
       ) {
-        setLoadEdit(true);
         const fd = new FormData();
 
         for (var key in newValues) {
@@ -90,7 +87,6 @@ const CategoryEdit = () => {
             theme: "colored",
           });
           setTimeout(() => {
-            setLoadEdit(false);
             setServiceEdit(!serviceEdit);
           }, 2000);
         }
@@ -108,15 +104,15 @@ const CategoryEdit = () => {
       <>
         <ToastContainer />
         <div className="modal-boxcon"></div>
-        (loadEdit ? (
-        <div className="modal-box3">
+
+        <div className="modal-box20">
           <div style={{ paddingRight: "4rem" }} className="spinner-edit">
             <InfinitySpin color={"#4444D5"} height={100} width={100} />
           </div>
         </div>
-        ) : (
+
         {categories !== "" && (
-          <form className="modal-box3">
+          <form className="modal-box20">
             <>
               <div className="category-edit-content">
                 <h2>Edit Service Category</h2>
@@ -173,12 +169,11 @@ const CategoryEdit = () => {
             </>
           </form>
         )}
-        ))
       </>
     );
   };
 
-  /**const ModalProductEdit = () => {
+  const ModalProductEdit = () => {
     const [categories, setCategories] = useState("");
 
     const [newValues, setNewValuse] = useState({
@@ -217,15 +212,12 @@ const CategoryEdit = () => {
       }
     };
 
-    const [loadEdit, setLoadEdit] = useState(false);
-
     const updateEditService = async () => {
       if (
         newValues.categoryId !== "Select" ||
         newValues.type !== "" ||
         newValues.image !== ""
       ) {
-        setLoadEdit(true);
         const fd = new FormData();
 
         for (var key in newValues) {
@@ -250,7 +242,6 @@ const CategoryEdit = () => {
             theme: "colored",
           });
           setTimeout(() => {
-            setLoadEdit(false);
             setProductEdit(!productEdit);
           }, 2000);
         }
@@ -270,77 +261,68 @@ const CategoryEdit = () => {
         <ToastContainer />
         <div className="modal-boxcon"></div>
 
-        {categories !== "" &&
-          (loadEdit ? (
-            <div className="modal-box3">
-              <div className="spinner-edit">
-                <InfinitySpin  color={"#4444D5"} height={50} width={50} />
-              </div>
-            </div>
-          ) : (
-            <form className="modal-box3">
-              <>
-                <div className="category-edit-content">
-                  <h2>Edit Product Category</h2>
-                  <h4 style={{ marginTop: 5, marginBottom: 5 }}>
-                    Select Type You Want to Edit
-                  </h4>
-                  <select
-                    onChange={editService}
-                    style={{ textTransform: "capitalize" }}
-                  >
-                    <option>Select</option>
-                    {categories.map((each) => (
-                      <option
-                        id={each._id}
-                        style={{ textTransform: "capitalize" }}
-                      >
-                        {each.type}
-                      </option>
-                    ))}
-                  </select>
-                  <h4 style={{ marginTop: 5, marginBottom: 5 }}>
-                    Type New Name
-                  </h4>
-                  <input
-                    id="newCategoryname"
-                    onChange={editService}
-                    type="text"
-                  />
-                  <h4 style={{ marginTop: 5, marginBottom: 5 }}>
-                    Add New Image
-                  </h4>
-                  <input
-                    id="newCategoryimage"
-                    onChange={editService}
-                    style={{ marginBottom: 5 }}
-                    type="file"
-                  />
-                </div>
-                <div className="category-edit-buttons-con">
-                  <button
-                    onClick={updateEditService}
-                    className="category-edit-button1"
-                    type="button"
-                  >
-                    Edit
-                  </button>
+        <div className="modal-box20">
+          <div style={{ paddingRight: "4rem" }} className="spinner-edit">
+            <InfinitySpin color={"#4444D5"} height={100} width={100} />
+          </div>
+        </div>
 
-                  <button
-                    onClick={() => {
-                      setProductEdit(!productEdit);
-                    }}
-                    className="category-edi-button2"
-                  >
-                    ✕
-                  </button>
-                </div>
-              </>
-            </form>
-          ))}
+        {categories !== "" && (
+          <form className="modal-box20">
+            <>
+              <div className="category-edit-content">
+                <h2>Edit Product Category</h2>
+                <h4 style={{ marginTop: 5, marginBottom: 5 }}>
+                  Select Type You Want to Edit
+                </h4>
+                <select
+                  onChange={editService}
+                  style={{ textTransform: "capitalize" }}
+                >
+                  <option>Select</option>
+                  {categories.map((each) => (
+                    <option
+                      id={each._id}
+                      style={{ textTransform: "capitalize" }}
+                    >
+                      {each.type}
+                    </option>
+                  ))}
+                </select>
+                <h4 style={{ marginTop: 5, marginBottom: 5 }}>Type New Name</h4>
+                <input onChange={editService} type="text" />
+                <h4 style={{ marginTop: 5, marginBottom: 5 }}>Add New Image</h4>
+                <input
+                  id="newCategoryimage"
+                  onChange={editService}
+                  style={{ marginBottom: 5 }}
+                  type="file"
+                />
+              </div>
+              <div className="category-edit-buttons-con">
+                <button
+                  onClick={updateEditService}
+                  className="category-edit-button1"
+                  type="button"
+                >
+                  Edit
+                </button>
+
+                <button
+                  onClick={() => {
+                    setProductEdit(!productEdit);
+                  }}
+                  className="category-edit-button1"
+                >
+                  Close
+                </button>
+              </div>
+            </>
+          </form>
+        )}
       </>
     );
-  };*/
+  };
 
   const ModalServiceDelete = () => {
     const [categories, setCategories] = useState("");
@@ -378,7 +360,6 @@ const CategoryEdit = () => {
       }));
     };
 
-    const [loadEdit, setLoadEdit] = useState(false);
     const [count, setCount] = useState(1);
 
     const updateEditService = async () => {
@@ -387,8 +368,6 @@ const CategoryEdit = () => {
           alert("Are you Sure you want to Delete Category");
           setCount(2);
         } else if (count === 2) {
-          setLoadEdit(true);
-
           const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/salon/deleteCategory?salonId=${newValues.salonId}&categoryId=${newValues.categoryId}`;
 
           const options = {
@@ -408,7 +387,6 @@ const CategoryEdit = () => {
             });
 
             setTimeout(() => {
-              setLoadEdit(false);
               setServiceDelete(!serviceDelete);
             }, 2000);
           }
@@ -428,13 +406,13 @@ const CategoryEdit = () => {
       <>
         <ToastContainer />
         <div className="modal-boxcon"></div>
-        (loadEdit ? (
+
         <div className="modal-box3">
           <div style={{ paddingRight: "4rem" }} className="spinner-edit">
             <InfinitySpin color={"#4444D5"} height={100} width={100} />
           </div>
         </div>
-        ) : (
+
         {categories !== "" && (
           <form className="modal-box3">
             <>
@@ -481,12 +459,11 @@ const CategoryEdit = () => {
             </>
           </form>
         )}
-        ))
       </>
     );
   };
 
-  /**const ModalProductDelete = () => {
+  const ModalProductDelete = () => {
     const [categories, setCategories] = useState("");
     const [newValues, setNewValuse] = useState({
       categoryId: "Select",
@@ -516,7 +493,6 @@ const CategoryEdit = () => {
       }));
     };
 
-    const [loadEdit, setLoadEdit] = useState(false);
     const [count, setCount] = useState(1);
 
     const updateEditService = async () => {
@@ -525,8 +501,6 @@ const CategoryEdit = () => {
           alert("Are you Sure you want to Delete Type");
           setCount(2);
         } else if (count === 2) {
-          setLoadEdit(true);
-
           const url = `${process.env.REACT_APP_ROOT_URL}/api/admin/category/deleteProductCategory?categoryId=${newValues.categoryId}`;
 
           const options = {
@@ -546,7 +520,6 @@ const CategoryEdit = () => {
             });
 
             setTimeout(() => {
-              setLoadEdit(false);
               setProductDelete(!productDelete);
             }, 2000);
           }
@@ -566,67 +539,65 @@ const CategoryEdit = () => {
       <>
         <ToastContainer />
         <div className="modal-boxcon"></div>
+        <div className="modal-box3">
+          <div style={{ paddingRight: "4rem" }} className="spinner-edit">
+            <InfinitySpin color={"#4444D5"} height={100} width={100} />
+          </div>
+        </div>
 
-        {categories !== "" &&
-          (loadEdit ? (
-            <div className="modal-box3">
-              <div className="spinner-edit">
-                <InfinitySpin  color={"#4444D5"} height={50} width={50} />
+        {categories !== "" && (
+          <form className="modal-box3">
+            <>
+              <div className="category-edit-content">
+                <h2>Delete Product Category</h2>
+                <h4 style={{ marginTop: 20, marginBottom: 15 }}>
+                  Select Type You Want to Delete
+                </h4>
+                <select
+                  onChange={editService}
+                  style={{ textTransform: "capitalize" }}
+                >
+                  <option>Select</option>
+                  {categories.map((each) => (
+                    <option
+                      key={each._id}
+                      id={each._id}
+                      style={{ textTransform: "capitalize" }}
+                    >
+                      {each.type}
+                    </option>
+                  ))}
+                </select>
               </div>
-            </div>
-          ) : (
-            <form className="modal-box3">
-              <>
-                <div className="category-edit-content">
-                  <h2>Delete Product Category</h2>
-                  <h4 style={{ marginTop: 20, marginBottom: 15 }}>
-                    Select Type You Want to Delete
-                  </h4>
-                  <select
-                    onChange={editService}
-                    style={{ textTransform: "capitalize" }}
-                  >
-                    <option>Select</option>
-                    {categories.map((each) => (
-                      <option
-                        key={each._id}
-                        id={each._id}
-                        style={{ textTransform: "capitalize" }}
-                      >
-                        {each.type}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="category-edit-buttons-con">
-                  <button
-                    onClick={updateEditService}
-                    className="category-edit-button1"
-                    type="button"
-                  >
-                    Delete
-                  </button>
+              <div className="category-edit-buttons-con">
+                <button
+                  onClick={updateEditService}
+                  className="category-edit-button1"
+                  type="button"
+                >
+                  Delete
+                </button>
 
-                  <button
-                    onClick={() => {
-                      setProductDelete(!productDelete);
-                    }}
-                    className="category-edi-button2"
-                  >
-                    ✕
-                  </button>
-                </div>
-              </>
-            </form>
-          ))}
+                <button
+                  onClick={() => {
+                    setProductDelete(!productDelete);
+                  }}
+                  className="category-edit-button1"
+                >
+                  Close
+                </button>
+              </div>
+            </>
+          </form>
+        )}
       </>
     );
-  };*/
+  };
 
   return (
     <>
       {serviceDelete && <ModalServiceDelete />}
-      {/**{productDelete && <ModalProductDelete />}*/}
+      {productDelete && <ModalProductDelete />}
       <div className="dashboard-component3">
         <div className="category-edit-product">
           <img
@@ -656,9 +627,9 @@ const CategoryEdit = () => {
             </button>
           </div>
         </div>
-        {/**<div className="category-edit-product">
+        <div className="category-edit-product">
           <img
-            src="/CategoryEdit.png"
+            src="/CategoryEdit2.png"
             className="category-edit-img"
             alt="category-edit"
           />
@@ -683,10 +654,10 @@ const CategoryEdit = () => {
               Delete
             </button>
           </div>
-        </div>*/}
+        </div>
       </div>
       {serviceEdit && <ModalServiceEdit />}
-      {/**{productEdit && <ModalProductEdit />}*/}
+      {productEdit && <ModalProductEdit />}
     </>
   );
 };

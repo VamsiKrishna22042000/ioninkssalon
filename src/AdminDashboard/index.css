@@ -141,6 +141,26 @@
   color: #4e4e4e;
   font-size: 1vw;
 }
+
+.modal-box20 {
+  position: fixed;
+  height: 45vh;
+  width: 30vw;
+  top: 30%;
+  left: 35%;
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4e4e4e;
+  font-size: 1vw;
+}
+
 .modal-Customer {
   position: fixed;
   height: auto;
@@ -383,7 +403,7 @@
 }
 
 .dashboard-component3 {
-  height: 80vh;
+  height: auto;
   width: 100%;
   display: flex;
   border-style: solid;
@@ -391,7 +411,7 @@
   border-top: hidden;
   border-bottom: hidden;
   border-color: #4e4e4e30;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding-bottom: 5%;
@@ -1128,6 +1148,7 @@
   align-items: center;
 }
 .category-edit-product {
+  padding-top: 15%;
   height: auto;
   width: auto;
   display: flex;

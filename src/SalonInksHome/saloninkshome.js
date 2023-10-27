@@ -8,6 +8,8 @@ import Cookies from "js-cookie";
 
 import ComprehensiveData from "./comprehensiveData";
 
+import { HiOutlineMail } from "react-icons/hi";
+
 import React, { useReducer, useState } from "react";
 
 import SimpleSlider from "./salonslider";
@@ -263,6 +265,21 @@ const Plans = [
   },
 ];
 
+const footerData = [
+  ["About", ["About", "Blog", "Careers", "Jobs", "InPress"]],
+  [
+    "Support",
+    ["Contact us", "Online Chat", "Whatsapp", "Telegram", "Ticketing"],
+  ],
+  ["FAQ", ["Account", "Manage Deliveries", "Orders", "Payments", "Returns"]],
+  ["About", ["About", "Blog", "Careers", "Jobs", "InPress"]],
+  [
+    "Support",
+    ["Contact us", "Online Chat", "Whatsapp", "Telegram", "Ticketing"],
+  ],
+  ["FAQ", ["Account", "Manage Deliveries", "Orders", "Payments", "Returns"]],
+];
+
 const SalonInksHome = (props) => {
   const loggedInOrNOt = Cookies.get("jwt_admin");
 
@@ -337,8 +354,6 @@ const SalonInksHome = (props) => {
   };
 
   const [state2, dispatch2] = useReducer(reducerfunc, contactPage);
-
-  console.log(state2);
 
   return (
     <div className="saloninks-home-con">
@@ -685,6 +700,7 @@ const SalonInksHome = (props) => {
         </div>
         <form className="contact-page-second-child">
           <input
+            className="text-box-contact"
             value={state2.firstName}
             onChange={(e) =>
               dispatch2({ type: "firstName", payload: e.target.value })
@@ -693,6 +709,7 @@ const SalonInksHome = (props) => {
             placeholder="First Name"
           />
           <input
+            className="text-box-contact"
             onChange={(e) =>
               dispatch2({ type: "lastName", payload: e.target.value })
             }
@@ -701,6 +718,7 @@ const SalonInksHome = (props) => {
             placeholder="Last Name"
           />
           <input
+            className="text-box-contact"
             onChange={(e) =>
               dispatch2({ type: "companyName", payload: e.target.value })
             }
@@ -709,6 +727,7 @@ const SalonInksHome = (props) => {
             placeholder="Company Name"
           />
           <input
+            className="text-box-contact"
             onChange={(e) =>
               dispatch2({ type: "emailAddress", payload: e.target.value })
             }
@@ -717,6 +736,7 @@ const SalonInksHome = (props) => {
             placeholder="Email Address"
           />
           <input
+            className="text-box-contact"
             onChange={(e) =>
               dispatch2({ type: "city", payload: e.target.value })
             }
@@ -725,6 +745,7 @@ const SalonInksHome = (props) => {
             placeholder="City"
           />
           <input
+            className="text-box-contact"
             onChange={(e) =>
               dispatch2({ type: "State", payload: e.target.value })
             }
@@ -755,6 +776,48 @@ const SalonInksHome = (props) => {
             me via my email address or phone number.
           </p>
         </form>
+      </div>
+      <div className="footer-sections">
+        <img src="./saloninkslogo2.png" alt="logo" />
+        <p>The smart choice for your Salon Business.</p>
+        <div className="footer-sub-section">
+          <div>
+            <h5>Newsletter</h5>
+            <p>Be the first one to know about discounts, offers and events</p>
+          </div>
+          <div className="child2">
+            <HiOutlineMail className="mail-icon" />
+            <input
+              className="text-box-contact"
+              type="email"
+              placeholder="Enter Your Email"
+            />
+            <button type="button">Submit</button>
+          </div>
+        </div>
+        <div className="last-sections">
+          {footerData.map((each) => (
+            <div>
+              <h5>{each[0]}</h5>
+              {each[1].map((e) => (
+                <p>{e}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+        <hr />
+        <div className="copy-right">
+          <div className="first-copy">
+            <p>About us</p>
+            <p>Contact</p>
+            <p>Privacy policy</p>
+            <p>Sitemap</p>
+            <p>Terms of Use</p>
+          </div>
+          <div className="second-copy">
+            <p>&copy; 2023-2024, All Rights Reserved</p>
+          </div>
+        </div>
       </div>
     </div>
   );

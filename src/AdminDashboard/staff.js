@@ -211,11 +211,11 @@ const Staff = () => {
       const alreadyPresent = customerData.filter(
         (each) => each.mobileNumber === tobeEdited.mobileNumber
       );
-      console.log(alreadyPresent);
+      /*console.log(alreadyPresent)*/
       if (
         filteredCustomer[0].staff === tobeEdited.staff &&
         filteredCustomer[0].mobileNumber === tobeEdited.mobileNumber &&
-        filteredCustomer[0].email === tobeEdited.email
+        filteredCustomer[0].category === tobeEdited.category
       ) {
         toast.error("No changes Made", {
           position: "top-center",
@@ -281,9 +281,9 @@ const Staff = () => {
         ) : (
           <form style={{ height: 250, width: 410 }} className="modal-Customer">
             <h1 style={{ marginBottom: 10, color: "#3E3E3E", fontSize: 20 }}>
-              Edit Existing Customer
+              Edit Existing Staff
             </h1>
-            <lable htmlFor="service-name-admin">Event Name</lable>
+            <lable htmlFor="service-name-admin">Staff Name</lable>
             <input
               value={tobeEdited.name}
               className="service-admin-input"
@@ -301,24 +301,28 @@ const Staff = () => {
                 }));
               }}
             />
-            <lable htmlFor="service-num-admin">Event Mobile Number</lable>
+            <lable htmlFor="service-num-admin">Staff Mobile Number</lable>
             <input
               maxLength={10}
               value={tobeEdited.mobileNumber}
               className="service-admin-input"
-              id="service-num-admin"
-              type="number"
-              style={{ height: 25, marginBottom: 10 }}
+              id="service-name-admin"
+              type="text"
+              style={{
+                height: 25,
+                marginBottom: 10,
+                textTransform: "capitalize",
+              }}
               onChange={(event) => {
                 setTobeEdited((prevEdit) => ({
                   ...prevEdit,
-                  mobileNumber: parseInt(event.target.value),
+                  mobileNumber: event.target.value,
                 }));
               }}
             />
-            <lable htmlFor="service-email-admin">Event Email</lable>
+            <lable htmlFor="service-email-admin">Staff Category</lable>
             <input
-              value={tobeEdited.email}
+              value={tobeEdited.category}
               className="service-admin-input"
               id="service-email-admin"
               type="text"
@@ -326,7 +330,7 @@ const Staff = () => {
               onChange={(event) => {
                 setTobeEdited((prevEdit) => ({
                   ...prevEdit,
-                  email: event.target.value,
+                  category: event.target.value,
                 }));
               }}
             />
