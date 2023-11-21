@@ -72,10 +72,59 @@ function NavBar(props) {
           <div className={showNavContents ? "bar3" : "bar"}></div>
         </div>
       </section>
-      {showNavContents && (
+      {showNavContents ? (
         <>
-          <div className="nav-bar-blur-content"></div>
-          <div className="nav-bar-content">
+          <div className="nav-bar-blur-content1"></div>
+          <div className="nav-bar-content1">
+            <div className="nav-bar-section1">
+              <p>Home</p>
+              <select>
+                <option>Features</option>
+              </select>
+              <select>
+                <option>Resources</option>
+              </select>
+              <p>Pricing</p>
+              <p>Contact us</p>
+            </div>
+            <div className="navbar-buttons2">
+              {loggedInOrNOt === undefined ? (
+                <button
+                  onClick={() => {
+                    props.props.history.replace("/loginadmin");
+                  }}
+                  type="button"
+                >
+                  Sign In
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    Cookies.remove("jwt_admin");
+                    props.props.history.replace("/");
+                  }}
+                  type="button"
+                >
+                  Log Out
+                </button>
+              )}
+              {loggedInOrNOt === undefined && (
+                <button
+                  onClick={() => {
+                    props.props.history.replace("/signupadmin");
+                  }}
+                  type="button"
+                >
+                  Get Started
+                </button>
+              )}
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="nav-bar-blur-content2"></div>
+          <div className="nav-bar-content2">
             <div className="nav-bar-section1">
               <p>Home</p>
               <select>
