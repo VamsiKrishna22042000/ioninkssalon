@@ -1,5 +1,115 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500&display=swap");
 
+@keyframes hideAnimation {
+  0% {
+    transform: translate(0%);
+  }
+  100% {
+    display: none;
+    transform: translate(-300%);
+  }
+}
+
+@keyframes showAnimation {
+  0% {
+    transform: translate(300%);
+  }
+
+  100% {
+    visibility: visible;
+    transform: translate(0%);
+  }
+}
+
+@keyframes showScissors {
+  0% {
+    transform: translate(300%) rotate(-360deg);
+  }
+  100% {
+    transform: translate(0%) rotate(0deg);
+  }
+}
+
+@keyframes showHairDryer {
+  0% {
+    transform: translate(3000%) rotate(-360deg);
+  }
+  100% {
+    transform: translate(0%) rotate(-30deg);
+  }
+}
+
+@keyframes hideScissors {
+  0% {
+    transform: translate(0%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-3000%) rotate(-360deg);
+  }
+}
+
+@keyframes hideHairDryer {
+  0% {
+    transform: translate(0%) rotate(-30deg);
+  }
+  100% {
+    transform: translate(-300%) rotate(-360deg);
+  }
+}
+
+.scissors1 {
+  right: 5%;
+  top: 5%;
+  position: absolute;
+  width: 10%;
+  animation: showScissors 0.5s ease-in-out forwards;
+}
+
+.hairdryer1 {
+  bottom: 5%;
+  left: 5%;
+  position: absolute;
+  width: 10%;
+  transform: rotate(-30deg);
+  animation: showHairDryer 0.5s ease-in-out forwards;
+}
+
+.scissors2 {
+  right: 5%;
+  top: 5%;
+  position: absolute;
+  width: 10%;
+  animation: hideScissors 0.5s ease-in-out forwards;
+}
+
+.hairdryer2 {
+  bottom: 5%;
+  left: 5%;
+  position: absolute;
+  width: 10%;
+  transform: rotate(-30deg);
+  animation: hideHairDryer 0.5s ease-in-out forwards;
+}
+
+.scissors3 {
+  right: 5%;
+  top: 5%;
+  position: absolute;
+  width: 10%;
+}
+
+.hairdryer3 {
+  bottom: 5%;
+  left: 5%;
+  position: absolute;
+  width: 10%;
+  transform: rotate(-30deg);
+}
+
+.show-none {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -134,6 +244,102 @@
   background-color: #fff;
 }
 
+/**Collecting data Css**/
+.modal-box-signupPage {
+  font-family: "Instrument Sans", sans-serif;
+  z-index: 20;
+  top: 20%;
+  left: 25%;
+  position: absolute !important;
+  height: 60vh;
+  width: 50vw;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 10px #222222;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.salonData1 {
+  height: 45%;
+  width: 55%;
+  display: flex; /* Set initial display to none */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 1px solid #4444d5;
+  border-radius: 0.25rem;
+  padding: 0% 2.5%;
+  background-color: #ffffff;
+  visibility: hidden;
+  animation: showAnimation 0.5s ease-in-out forwards;
+}
+
+.salonData3 {
+  height: 45%;
+  width: 55%;
+  display: flex; /* Set initial display to none */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 1px solid #4444d5;
+  border-radius: 0.25rem;
+  padding: 0% 2.5%;
+  background-color: #ffffff;
+}
+
+.salonData2 {
+  height: 45%;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 1px solid #4444d5;
+  border-radius: 0.25rem;
+  padding: 0% 2.5%;
+  background-color: #ffffff;
+  animation: hideAnimation 0.5s ease-in-out forwards;
+}
+
+.modal-box-signupPage input {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.modal-box-signupPage select {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.modal-box-signupPage p {
+  font-weight: bolder;
+}
+
+.modal-box-signupPage button {
+  align-self: flex-end;
+  padding: 2% 3%;
+  color: #ffffff;
+  border: 1px solid #4444d5;
+  background-color: #4444d5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.modal-box-signupPage button:active {
+  align-self: flex-end;
+  padding: 2% 3%;
+  color: #4444d5;
+  border: 1px solid #4444d5;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+}
+
+/**Collecting data Css**/
+
 /**mobile potrait*/
 @media screen and (max-width: 600px) {
   .signup-main-con {
@@ -174,6 +380,7 @@
     border-radius: 1rem;
     padding: 5% 0%;
     background-color: #4444d520;
+    margin-bottom: 5%;
   }
 
   .sign-in-inputs {

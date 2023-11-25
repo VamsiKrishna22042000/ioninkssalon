@@ -74,6 +74,7 @@ const DashboardMain = (props) => {
           <button
             type="button"
             onClick={sendSelectedOption}
+            id={each.name}
             key={each.name}
             className={
               each.name === selectedDashboard

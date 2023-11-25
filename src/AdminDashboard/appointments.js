@@ -471,14 +471,11 @@ const Appointments = () => {
                             ))}
                           </select>
                         ) : (
-                          <div
-                            style={{ marginTop: 25 }}
-                            className="spin-height"
-                          >
+                          <div className="spin-height">
                             <InfinitySpin
                               color={"red"}
-                              height={20}
-                              width={20}
+                              height={40}
+                              width={40}
                             />
                           </div>
                         ))}

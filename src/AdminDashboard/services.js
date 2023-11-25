@@ -12,6 +12,39 @@ import ModalBoxEdit from "./modalboxEdit";
 
 import { useState, useEffect } from "react";
 
+const timeArray = [
+  "00:10",
+  "00:20",
+  "00:30",
+  "00:40",
+  "00:50",
+  "01:00",
+  "01:10",
+  "01:20",
+  "01:30",
+  "01:40",
+  "01:50",
+  "02:00",
+  "02:10",
+  "02:20",
+  "02:30",
+  "02:40",
+  "02:50",
+  "03:00",
+  "03:10",
+  "03:20",
+  "03:30",
+  "03:40",
+  "03:50",
+  "04:00",
+  "04:10",
+  "04:20",
+  "04:30",
+  "04:40",
+  "04:50",
+  "05:00",
+];
+
 const Services = () => {
   const [load, setLoad] = useState(false);
   const [availableServices, setavailServices] = useState([]);
@@ -445,13 +478,18 @@ const Services = () => {
                   value={dataToBe.price}
                 />
                 <lable htmlFor="service-time-admin">Service Time</lable>
-                <input
+                <select
                   className="service-admin-input"
                   onChange={addService}
                   id="service-time-admin"
                   type="text"
                   value={dataToBe.time}
-                />
+                >
+                  <option>Select Time</option>
+                  {timeArray.map((each) => (
+                    <option>{each}</option>
+                  ))}
+                </select>
                 <lable htmlFor="service-description-admin">
                   Describe about service
                 </lable>

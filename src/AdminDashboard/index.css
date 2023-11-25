@@ -295,7 +295,6 @@
   justify-content: flex-start;
   align-items: center;
   font-size: 1.1rem;
-
   border: 0px;
   margin-bottom: 15%;
   cursor: pointer;
@@ -776,6 +775,7 @@
   height: 100%;
   width: 100%;
   border-radius: 0.2rem;
+  object-fit: cover;
 }
 
 .toggle-con1 {
@@ -1029,8 +1029,8 @@
 
 .appointment-service-img {
   height: 100%;
-  width: 32.5%;
-  object-fit: fill;
+  width: 41%;
+  object-fit: cover;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
@@ -1105,12 +1105,13 @@
   color: transparent;
 }
 .appointment-service-content2:hover .spin-height {
-  margin-top: 7%;
+  margin-top: 40%;
   margin-left: 19%;
-  height: 15%;
+  height: auto;
   width: 15%;
   transition: all 0.3s ease-in-out;
   transform: translateY(-520%);
+  border: 2px solid transparent;
 }
 .user-name-app {
   position: absolute;
