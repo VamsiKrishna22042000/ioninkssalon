@@ -78,6 +78,7 @@ const SignUpAdmin = (props) => {
       history.replace("/admindashboard");
     } else {
       setLoad(false);
+      window.location.reload();
       toast.error(`${data.message}`, {
         position: "top-center",
         autoClose: 2000,

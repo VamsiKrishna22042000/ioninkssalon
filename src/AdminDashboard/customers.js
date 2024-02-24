@@ -31,6 +31,7 @@ const Customers = () => {
       email: "",
       mobileNumber: "",
       name: "",
+      address: "",
       adminId,
     });
 
@@ -53,7 +54,7 @@ const Customers = () => {
           closeOnClick: true,
           theme: "colored",
         });
-      } else if (num <= 9) {
+      } else if (num.length < 9) {
         toast.error("Please Enter Valid Mobile Number", {
           position: "top-center",
           autoClose: 2000,
@@ -69,7 +70,11 @@ const Customers = () => {
           closeOnClick: true,
           theme: "colored",
         });
-      } else if (!tobeAdded.email.endsWith("@gmail.com")) {
+      } else if (
+        !tobeAdded.email.endsWith(
+          "@gmail.com" || "@hotmail.com" || "@outlook.com"
+        )
+      ) {
         toast.error("Please Enter correct email", {
           position: "top-center",
           autoClose: 2000,
@@ -138,10 +143,15 @@ const Customers = () => {
               type="text"
               style={{ height: 25, marginBottom: 10 }}
               onChange={(event) => {
-                setTobeAdded((prevAdd) => ({
-                  ...prevAdd,
-                  name: event.target.value,
-                }));
+                const inputValue = event.target.value;
+
+                // Use a regular expression to check if the input contains only letters
+                if (/^[A-Za-z]+$/.test(inputValue) || inputValue === "") {
+                  setTobeAdded((prevAdd) => ({
+                    ...prevAdd,
+                    name: inputValue,
+                  }));
+                }
               }}
             />
             <lable htmlFor="service-num-admin">Customer Mobile Number</lable>
@@ -151,13 +161,16 @@ const Customers = () => {
               className="service-admin-input"
               id="service-num-admin"
               maxLength={10}
-              type="number"
+              type="text"
               style={{ height: 25, marginBottom: 10 }}
               onChange={(event) => {
-                setTobeAdded((prevAdd) => ({
-                  ...prevAdd,
-                  mobileNumber: parseInt(event.target.value),
-                }));
+                const inputValue = event.target.value;
+                if (/^[0-9]+$/.test(inputValue) || inputValue === "") {
+                  setTobeAdded((prevAdd) => ({
+                    ...prevAdd,
+                    mobileNumber: parseInt(inputValue) || "",
+                  }));
+                }
               }}
             />
             <lable htmlFor="service-email-admin">Customer Email</lable>
@@ -166,7 +179,7 @@ const Customers = () => {
               value={tobeAdded.email}
               className="service-admin-input"
               id="service-email-admin"
-              type="text"
+              type="email"
               style={{ height: 25, marginBottom: 10 }}
               onChange={(event) => {
                 setTobeAdded((prevAdd) => ({
